@@ -99,6 +99,7 @@ class BatchAmplitudeSchedule:
         return {"required": {
                     "audio_fft": ("AUDIO_FFT",),
                     "invert_normalized": ("BOOLEAN", {"default": False},),
+                    "gate_normalized": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.01}),
                     "lower_band_range": ("INT", {"default": 500.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
                     "upper_band_range": ("INT", {"default": 4000.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
                      },}
@@ -109,7 +110,7 @@ class BatchAmplitudeSchedule:
     RETURN_NAMES = ("normalized_amplitude", "amplitude")
     FUNCTION = "animate"
 
-    def animate(self, audio_fft, invert_normalized:bool, lower_band_range: int, upper_band_range: int,):
+    def animate(self, audio_fft, invert_normalized:bool, gate_normalized:float, lower_band_range: int, upper_band_range: int,):
         max_frames = len(audio_fft)
         normalized_key_frame_series = pd.Series([np.nan for a in range(max_frames)])
         key_frame_series = pd.Series([np.nan for a in range(max_frames)])
@@ -125,7 +126,11 @@ class BatchAmplitudeSchedule:
             normalized_key_frame = np.max(normalized_fft_result[indices])
             if (invert_normalized):
                 normalized_key_frame = 1.0 - normalized_key_frame
-            normalized_key_frame_series[i] = normalized_key_frame
+                
+            if (normalized_key_frame > gate_normalized):
+                normalized_key_frame_series[i] = normalized_key_frame
+            else:
+                normalized_key_frame_series[i] = 0.0
             key_frame_series[i] = int(np.max(fft.fft[indices]))
 
         return (normalized_key_frame_series, key_frame_series,)
