@@ -1,27 +1,28 @@
 import os
+import hashlib
 import folder_paths
 import numpy as np
 import pandas as pd
 
 from pydub import AudioSegment
-from scipy.fft import fft
 
 from.audio import AudioData, AudioFFTData
 
 from comfy.k_diffusion.utils import FolderOfImages
 
-folder_paths.folder_names_and_paths["video_formats"] = (
-    [
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "video_formats"),
-    ],
-    [".json"]
-)
-
-class LoadAudioFromPath:
+class LoadAudio:
     @classmethod
     def INPUT_TYPES(s):
+        audio_extensions = ['mp3']
+        input_dir = folder_paths.get_input_directory()
+        files = []
+        for f in os.listdir(input_dir):
+            if os.path.isfile(os.path.join(input_dir, f)):
+                file_parts = f.split('.')
+                if len(file_parts) > 1 and (file_parts[-1] in audio_extensions):
+                    files.append(f)
         return {"required": {
-                    "file": ("STRING", {"default": ""}),
+                    "audio": (sorted(files),),
                      },}
 
     CATEGORY = "AudioScheduler"
@@ -31,15 +32,29 @@ class LoadAudioFromPath:
     FUNCTION = "load_audio"
 
 
-    def load_audio(self, file: str):
-        if not os.path.isfile(file):
-            raise FileNotFoundError(f"File '{file} cannot be found.'")
+    def load_audio(self, audio):
+        file = folder_paths.get_annotated_filepath(audio)
 
         # TODO: support more formats
         mp3_file = AudioSegment.from_mp3(file)
         audio_data = AudioData(mp3_file)
 
         return (audio_data,)
+    
+    @classmethod
+    def IS_CHANGED(self, audio, **kwargs):
+        audio_path = folder_paths.get_annotated_filepath(audio)
+        m = hashlib.sha256()
+        with open(audio_path, 'rb') as f:
+            m.update(f.read())
+        return m.digest().hex()
+
+    @classmethod
+    def VALIDATE_INPUTS(self, audio, **kwargs):
+        if not folder_paths.exists_annotated_filepath(audio):
+            return "Invalid audio file: {}".format(audio)
+
+        return True
      
 
 class AudioToFFTs:
@@ -148,16 +163,14 @@ class AmplitudeSchedule:
         return (normalized_key_frame, int(np.max(fft.fft[indices])),)
     
 
-    
-
 NODE_CLASS_MAPPINGS = {
-    "LoadAudioFromPath": LoadAudioFromPath,
+    "LoadAudio": LoadAudio,
     "AudioToFFTs": AudioToFFTs,
     "BatchAmplitudeSchedule": BatchAmplitudeSchedule,
     "AmplitudeSchedule": AmplitudeSchedule,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoadAudioFromPath": "Load Audio From Path",
+    "LoadAudio": "Load Audio",
     "AudioToFFTs": "Audio to FFTs",
     "BatchAmplitudeSchedule": "Batch Amplitude Schedule",
     "AmplitudeSchedule": "Amplitude Schedule",
