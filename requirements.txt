@@ -1,0 +1,4 @@
+pandas
+pydub
+numpy
+scipy
