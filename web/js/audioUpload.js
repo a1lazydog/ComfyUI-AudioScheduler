@@ -70,7 +70,7 @@ function audioUpload(node, inputName, inputData, app) {
     const fileInput = document.createElement("input");
     Object.assign(fileInput, {
         type: "file",
-        accept: "audio/mp3",
+        accept: "audio/mp3,audio/wav",
         style: "display: none",
         onchange: async () => {
             if (fileInput.files.length) {
