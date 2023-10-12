@@ -18,8 +18,8 @@ class AudioData:
         self.num_channels = num_channels
     
     def get_channel_audio_data(self, channel: int):
-        if channel < 0 and channel >= self.num_channels:
-            raise IndexError(f"Channel '{channel}' out of range for the total {self.num_channels}.")
+        if channel < 0 or channel >= self.num_channels:
+            raise IndexError(f"Channel '{channel}' out of range. total channels is '{self.num_channels}'.")
         return self.audio_data[channel::self.num_channels]
     
     def get_channel_fft(self, channel: int):
@@ -27,10 +27,11 @@ class AudioData:
         return fft(audio_data)
 
 class AudioFFTData:
-    def __init__(self, fft, sample_rate) -> None:
+    def __init__(self, audio_data, sample_rate) -> None:
 
-        self.fft = fft
-        self.frequency_bins = np.fft.fftfreq(len(fft), 1 / sample_rate)
+        self.fft = fft(audio_data)
+        self.length = len(self.fft)
+        self.frequency_bins = np.fft.fftfreq(self.length, 1 / sample_rate)
     
     def get_max_amplitude(self):
         return np.max(np.abs(self.fft))
@@ -43,4 +44,4 @@ class AudioFFTData:
         return np.where((self.frequency_bins >= lower_band_range) & (self.frequency_bins < upper_band_range))
 
     def __len__(self):
-        return 1
+        return self.length
