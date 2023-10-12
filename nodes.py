@@ -139,7 +139,7 @@ class AudioToAmplitudeGraph:
                     "upper_band_range": ("INT", {"default": 4000.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
                      },}
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("graph_image",)
@@ -186,7 +186,7 @@ class BatchAmplitudeSchedule:
                     "upper_band_range": ("INT", {"default": 4000.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
                      },}
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("AMPLITUDE",)
     RETURN_NAMES = ("amplitude",)
@@ -227,7 +227,7 @@ class NormalizeAmplitude:
                     }
                 }
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("NORMALIZED_AMPLITUDE",)
     RETURN_NAMES = ("normalized_amp",)
@@ -248,7 +248,7 @@ class GateNormalizedAmplitude:
                      },
                 }
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("NORMALIZED_AMPLITUDE",)
     RETURN_NAMES = ("normalized_amp",)
@@ -265,7 +265,7 @@ class NormalizedAmplitudeToNumber:
                     "normalized_amp": ("NORMALIZED_AMPLITUDE",),
                      },}
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("FLOAT", "INT")
     FUNCTION = "convert"
@@ -281,7 +281,7 @@ class NormalizedAmplitudeToGraph:
                     "normalized_amp": ("NORMALIZED_AMPLITUDE", {"forceInput": True}),
                     },}
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("graph_image",)
@@ -323,7 +323,7 @@ class AmplitudeToNumber:
                     "amplitude": ("AMPLITUDE",),
                      },}
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("FLOAT", "INT")
     FUNCTION = "convert"
@@ -339,7 +339,7 @@ class AmplitudeToGraph:
                     "amplitude": ("AMPLITUDE", {"forceInput": True}),
                     },}
 
-    CATEGORY = "AudioScheduler"
+    CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("graph_image",)

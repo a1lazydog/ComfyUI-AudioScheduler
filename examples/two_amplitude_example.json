@@ -1,0 +1,2856 @@
+{
+  "last_node_id": 447,
+  "last_link_id": 729,
+  "nodes": [
+    {
+      "id": 250,
+      "type": "Reroute",
+      "pos": [
+        -1837.1035815027028,
+        -399.9962615561268
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 428
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": [
+            441
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 251,
+      "type": "Reroute",
+      "pos": [
+        -1837.1035815027028,
+        -369.9962615561268
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 717
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": [
+            442
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 249,
+      "type": "Reroute",
+      "pos": [
+        -1837.1035815027028,
+        -339.996261556127
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 382
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            457
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 279,
+      "type": "Reroute",
+      "pos": [
+        -1837.1035815027028,
+        -429.99626155612657
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 458
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CLIP",
+          "links": [
+            459
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 260,
+      "type": "Reroute",
+      "pos": [
+        -521.6697515606793,
+        -305.34637919161867
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 408
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LATENT",
+          "links": [
+            446
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 148,
+      "type": "ImpactInt",
+      "pos": [
+        -2354.5204677559013,
+        482.68713649360615
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            250
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Width",
+      "properties": {
+        "Node name for S&R": "ImpactInt"
+      },
+      "widgets_values": [
+        768
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 261,
+      "type": "Reroute",
+      "pos": [
+        -1490,
+        -300
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 410
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LATENT",
+          "links": [
+            408
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 280,
+      "type": "Text Multiline",
+      "pos": [
+        -2877.103581502704,
+        -289.996261556127
+      ],
+      "size": {
+        "0": 280,
+        "1": 160
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            468
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Prepend text",
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "RAW photo of beautiful korean woman, turtleneck,"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 283,
+      "type": "Text Multiline",
+      "pos": [
+        -2877.103581502704,
+        40.003738443873345
+      ],
+      "size": {
+        "0": 280,
+        "1": 130
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            470
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Append text",
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "simple background, highly detailed, realistic, portrait"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 262,
+      "type": "Reroute",
+      "pos": [
+        -1837.1035815027028,
+        -299.99626155612714
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 409
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LATENT",
+          "links": [
+            410
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 284,
+      "type": "Note",
+      "pos": [
+        -2027.103581502704,
+        -89.99626155612663
+      ],
+      "size": {
+        "0": 240,
+        "1": 240
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "title": "Prompt Traveling",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Use the prompt traveling to change the prompt as the frames moves.  Use the prepend & append text for parts of the prompt that should stay the same for the whole generation."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 380,
+      "type": "NormalizedAmplitudeToNumber",
+      "pos": [
+        -4494.227938523252,
+        -89.83837482075774
+      ],
+      "size": {
+        "0": 302.3999938964844,
+        "1": 50
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 660
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            628
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToNumber"
+      }
+    },
+    {
+      "id": 378,
+      "type": "NormalizedAmplitudeToGraph",
+      "pos": [
+        -4488.528412070098,
+        -168.73949147146516
+      ],
+      "size": {
+        "0": 243.60000610351562,
+        "1": 30
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 659
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            626
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToGraph"
+      }
+    },
+    {
+      "id": 379,
+      "type": "PreviewImage",
+      "pos": [
+        -4188.528412070098,
+        -168.73949147146516
+      ],
+      "size": {
+        "0": 1080,
+        "1": 290
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 626
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 376,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -5004.227938523252,
+        -169.83837482075808
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 623
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            658
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 375,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5268.528412070098,
+        -168.73949147146516
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 622
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            623
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "avg",
+        0,
+        70
+      ]
+    },
+    {
+      "id": 316,
+      "type": "LoadAudio",
+      "pos": [
+        -6400,
+        -600
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            541,
+            656
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "Real Good Snippet.wav",
+        "Audio"
+      ]
+    },
+    {
+      "id": 404,
+      "type": "AudioToAmplitudeGraph",
+      "pos": [
+        -5310,
+        -660
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 656
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            657
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AudioToAmplitudeGraph"
+      },
+      "widgets_values": [
+        0,
+        1000,
+        4000
+      ]
+    },
+    {
+      "id": 271,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -510,
+        100
+      ],
+      "size": {
+        "0": 800,
+        "1": 980
+      },
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 436
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": 695,
+          "widget": {
+            "name": "filename_prefix",
+            "config": [
+              "STRING",
+              {
+                "default": "AnimateDiff"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame_rate",
+          "type": "INT",
+          "link": 699,
+          "widget": {
+            "name": "frame_rate",
+            "config": [
+              "INT",
+              {
+                "default": 8,
+                "min": 1,
+                "step": 1
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GIF",
+          "type": "GIF",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": [
+        12,
+        0,
+        "AnimateDiff/AD",
+        "video/h264-mp4",
+        false,
+        true
+      ]
+    },
+    {
+      "id": 302,
+      "type": "AudioToFFTs",
+      "pos": [
+        -6040,
+        -600
+      ],
+      "size": {
+        "0": 320,
+        "1": 150
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 541,
+          "slot_index": 0
+        },
+        {
+          "name": "frames_per_second",
+          "type": "INT",
+          "link": 696,
+          "widget": {
+            "name": "frames_per_second",
+            "config": [
+              "INT",
+              {
+                "default": 12,
+                "min": 0,
+                "max": 240,
+                "step": 1
+              }
+            ]
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO_FFT",
+          "type": "AUDIO_FFT",
+          "links": [
+            622,
+            710
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "total_frames",
+          "type": "INT",
+          "links": [
+            607
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AudioToFFTs"
+      },
+      "widgets_values": [
+        0,
+        12,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 433,
+      "type": "ImpactInt",
+      "pos": [
+        -6300,
+        -460
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            696,
+            697
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Frames per Second",
+      "properties": {
+        "Node name for S&R": "ImpactInt"
+      },
+      "widgets_values": [
+        12
+      ]
+    },
+    {
+      "id": 272,
+      "type": "ADE_AnimateDiffUniformContextOptions",
+      "pos": [
+        -1705.0599072265627,
+        -631.2401171875013
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTEXT_OPTIONS",
+          "type": "CONTEXT_OPTIONS",
+          "links": [
+            443
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffUniformContextOptions"
+      },
+      "widgets_values": [
+        16,
+        1,
+        4,
+        "uniform",
+        false
+      ]
+    },
+    {
+      "id": 405,
+      "type": "PreviewImage",
+      "pos": [
+        -4930,
+        -660
+      ],
+      "size": {
+        "0": 1950,
+        "1": 330
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 657
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 20,
+      "type": "EmptyLatentImage",
+      "pos": [
+        -1994.5204677559013,
+        402.68713649360603
+      ],
+      "size": {
+        "0": 320,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 250,
+          "widget": {
+            "name": "width",
+            "config": [
+              "INT",
+              {
+                "default": 512,
+                "min": 64,
+                "max": 8192,
+                "step": 8
+              }
+            ]
+          },
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 252,
+          "widget": {
+            "name": "height",
+            "config": [
+              "INT",
+              {
+                "default": 512,
+                "min": 64,
+                "max": 8192,
+                "step": 8
+              }
+            ]
+          }
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "link": 539,
+          "widget": {
+            "name": "batch_size",
+            "config": [
+              "INT",
+              {
+                "default": 1,
+                "min": 1,
+                "max": 64
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            409
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 364,
+      "type": "Reroute",
+      "pos": [
+        -5280,
+        220
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 607
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            608
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 430,
+      "type": "Text Multiline",
+      "pos": [
+        -510,
+        -20
+      ],
+      "size": {
+        "0": 260,
+        "1": 76
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            693
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Filename Prefix",
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "AnimateDiff/[time(%Y-%m-%d)]/Music"
+      ]
+    },
+    {
+      "id": 431,
+      "type": "Text Parse Tokens",
+      "pos": [
+        -110,
+        10
+      ],
+      "size": {
+        "0": 210,
+        "1": 34
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 693,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "forceInput": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            695
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Parse Tokens"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 434,
+      "type": "Reroute",
+      "pos": [
+        -5330,
+        780
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 697
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            698
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 435,
+      "type": "Reroute",
+      "pos": [
+        -1840,
+        760
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 698
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            699
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 441,
+      "type": "NormalizedAmplitudeToGraph",
+      "pos": [
+        -4490,
+        380
+      ],
+      "size": {
+        "0": 243.60000610351562,
+        "1": 30
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 713
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            714
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToGraph"
+      }
+    },
+    {
+      "id": 442,
+      "type": "PreviewImage",
+      "pos": [
+        -4190,
+        380
+      ],
+      "size": {
+        "0": 1080,
+        "1": 290
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 714
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 443,
+      "type": "NormalizedAmplitudeToNumber",
+      "pos": [
+        -4500,
+        460
+      ],
+      "size": {
+        "0": 302.3999938964844,
+        "1": 50
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 715
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            709
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToNumber"
+      }
+    },
+    {
+      "id": 438,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5270,
+        380
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 710
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            711
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "avg",
+        0,
+        70
+      ]
+    },
+    {
+      "id": 153,
+      "type": "Note",
+      "pos": [
+        -2790,
+        630
+      ],
+      "size": {
+        "0": 242.87770080566406,
+        "1": 91.08895111083984
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "title": "Image Size",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Use this to keep the start and end poses the same size as the output."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 149,
+      "type": "ImpactInt",
+      "pos": [
+        -2290,
+        640
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            252
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Height",
+      "properties": {
+        "Node name for S&R": "ImpactInt"
+      },
+      "widgets_values": [
+        512
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -2887.103581502704,
+        -429.99626155612657
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            471
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            427,
+            458,
+            716
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            382
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "juggernaut_final.safetensors"
+      ]
+    },
+    {
+      "id": 444,
+      "type": "BatchPromptSchedule",
+      "pos": [
+        -2560,
+        220
+      ],
+      "size": [
+        470,
+        350
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 716
+        },
+        {
+          "name": "max_frames",
+          "type": "INT",
+          "link": 729,
+          "widget": {
+            "name": "max_frames",
+            "config": [
+              "INT",
+              {
+                "default": 120,
+                "min": 1,
+                "max": 9999,
+                "step": 1
+              }
+            ]
+          }
+        },
+        {
+          "name": "pw_a",
+          "type": "FLOAT",
+          "link": 724,
+          "widget": {
+            "name": "pw_a",
+            "config": [
+              "FLOAT",
+              {
+                "default": 0,
+                "min": -9999,
+                "max": 9999,
+                "step": 0.1
+              }
+            ]
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "pw_b",
+          "type": "FLOAT",
+          "link": 725,
+          "widget": {
+            "name": "pw_b",
+            "config": [
+              "FLOAT",
+              {
+                "default": 0,
+                "min": -9999,
+                "max": 9999,
+                "step": 0.1
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            717
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "CLIP Negative Prompt Traveling",
+      "properties": {
+        "Node name for S&R": "BatchPromptSchedule"
+      },
+      "widgets_values": [
+        "\"0\" :\"(smile:`pw_a`), (mad:`pw_b`), \",\n\"128\" :\"(smile:`pw_a`), (mad:`pw_b`), \"",
+        120,
+        "",
+        "nude, nsfw, canvas frame, cartoon, 3d, out-of-frame, ugly, cross-eyed, embedding:JuggernautNegative-neg, embedding:bad-hands-5, twins, clones, embedding:EasyNegative, ",
+        0,
+        0,
+        0,
+        0
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 439,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -5010,
+        380
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 711
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            712
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 440,
+      "type": "GateNormalizedAmplitude",
+      "pos": [
+        -4770,
+        380
+      ],
+      "size": {
+        "0": 250,
+        "1": 60
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 712
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            713,
+            715
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GateNormalizedAmplitude"
+      },
+      "widgets_values": [
+        0.7000000000000001
+      ]
+    },
+    {
+      "id": 268,
+      "type": "BatchPromptSchedule",
+      "pos": [
+        -2550,
+        -190
+      ],
+      "size": [
+        470,
+        350
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 427
+        },
+        {
+          "name": "max_frames",
+          "type": "INT",
+          "link": 538,
+          "widget": {
+            "name": "max_frames",
+            "config": [
+              "INT",
+              {
+                "default": 120,
+                "min": 1,
+                "max": 9999,
+                "step": 1
+              }
+            ]
+          }
+        },
+        {
+          "name": "pre_text",
+          "type": "STRING",
+          "link": 468,
+          "widget": {
+            "name": "pre_text",
+            "config": [
+              "STRING",
+              {
+                "multiline": false
+              }
+            ]
+          },
+          "slot_index": 2
+        },
+        {
+          "name": "app_text",
+          "type": "STRING",
+          "link": 470,
+          "widget": {
+            "name": "app_text",
+            "config": [
+              "STRING",
+              {
+                "multiline": false
+              }
+            ]
+          },
+          "slot_index": 3
+        },
+        {
+          "name": "pw_a",
+          "type": "FLOAT",
+          "link": 591,
+          "widget": {
+            "name": "pw_a",
+            "config": [
+              "FLOAT",
+              {
+                "default": 0,
+                "min": -9999,
+                "max": 9999,
+                "step": 0.1
+              }
+            ]
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "pw_b",
+          "type": "FLOAT",
+          "link": 721,
+          "widget": {
+            "name": "pw_b",
+            "config": [
+              "FLOAT",
+              {
+                "default": 0,
+                "min": -9999,
+                "max": 9999,
+                "step": 0.1
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            428
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "CLIP Positive Prompt Traveling",
+      "properties": {
+        "Node name for S&R": "BatchPromptSchedule"
+      },
+      "widgets_values": [
+        "\"0\" :\"(smile:`pw_a`), (mad:`pw_b`), \",\n\"128\" :\"(smile:`pw_a`), (mad:`pw_b`), \"",
+        120,
+        "RAW photo of korean woman, ",
+        "highly detailed, realistic, portrait, simple background, turtleneck sweater",
+        0,
+        0,
+        0,
+        0
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 437,
+      "type": "Reroute",
+      "pos": [
+        -3080,
+        470
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 709
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "FLOAT",
+          "links": [
+            718,
+            720
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 348,
+      "type": "Reroute",
+      "pos": [
+        -3074.227938523242,
+        -79.83837482075779
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 628
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "FLOAT",
+          "links": [
+            590,
+            723
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 356,
+      "type": "Reroute",
+      "pos": [
+        -2880,
+        -110
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 590
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "FLOAT",
+          "links": [
+            591
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 446,
+      "type": "Reroute",
+      "pos": [
+        -2880,
+        -80
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 720
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "FLOAT",
+          "links": [
+            721
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 377,
+      "type": "GateNormalizedAmplitude",
+      "pos": [
+        -4764.227938523252,
+        -169.83837482075808
+      ],
+      "size": {
+        "0": 250,
+        "1": 60
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 658
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            659,
+            660
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GateNormalizedAmplitude"
+      },
+      "widgets_values": [
+        0.6
+      ]
+    },
+    {
+      "id": 447,
+      "type": "Reroute",
+      "pos": [
+        -2880,
+        300
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 723
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "FLOAT",
+          "links": [
+            724
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 445,
+      "type": "Reroute",
+      "pos": [
+        -2880,
+        340
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 718
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "FLOAT",
+          "links": [
+            725
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 248,
+      "type": "Reroute",
+      "pos": [
+        -1837.1035815027028,
+        -459.99626155612634
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 471
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            726
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 274,
+      "type": "ADE_AnimateDiffLoaderWithContext",
+      "pos": [
+        -1360.7999023437485,
+        -649.199731445313
+      ],
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 726
+        },
+        {
+          "name": "context_options",
+          "type": "CONTEXT_OPTIONS",
+          "link": 443,
+          "slot_index": 1
+        },
+        {
+          "name": "motion_lora",
+          "type": "MOTION_LORA",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            727
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
+      },
+      "widgets_values": [
+        "mm_sd_v15_v2.ckpt",
+        "sqrt_linear (AnimateDiff)"
+      ]
+    },
+    {
+      "id": 273,
+      "type": "ToBasicPipe",
+      "pos": [
+        -980,
+        -320
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 727
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 459
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 457
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 441
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 442
+        }
+      ],
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            728
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ToBasicPipe"
+      }
+    },
+    {
+      "id": 275,
+      "type": "ImpactKSamplerBasicPipe",
+      "pos": [
+        -420,
+        -340
+      ],
+      "size": {
+        "0": 315,
+        "1": 242
+      },
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 728
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 446
+        }
+      ],
+      "outputs": [
+        {
+          "name": "BASIC_PIPE",
+          "type": "BASIC_PIPE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            448
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            447
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactKSamplerBasicPipe"
+      },
+      "widgets_values": [
+        781225772820777,
+        "randomize",
+        25,
+        7,
+        "ddim",
+        "ddim_uniform",
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        -60,
+        -270
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 448
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 447
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            436
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 315,
+      "type": "Reroute",
+      "pos": [
+        -2880,
+        220
+      ],
+      "size": [
+        110,
+        30
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 608
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            538,
+            539,
+            729
+          ],
+          "slot_index": 0,
+          "label": "Max Frames"
+        }
+      ],
+      "title": "Max Frames",
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    }
+  ],
+  "links": [
+    [
+      250,
+      148,
+      0,
+      20,
+      0,
+      "INT"
+    ],
+    [
+      252,
+      149,
+      0,
+      20,
+      1,
+      "INT"
+    ],
+    [
+      382,
+      4,
+      2,
+      249,
+      0,
+      "*"
+    ],
+    [
+      408,
+      261,
+      0,
+      260,
+      0,
+      "*"
+    ],
+    [
+      409,
+      20,
+      0,
+      262,
+      0,
+      "*"
+    ],
+    [
+      410,
+      262,
+      0,
+      261,
+      0,
+      "*"
+    ],
+    [
+      427,
+      4,
+      1,
+      268,
+      0,
+      "CLIP"
+    ],
+    [
+      428,
+      268,
+      0,
+      250,
+      0,
+      "*"
+    ],
+    [
+      436,
+      8,
+      0,
+      271,
+      0,
+      "IMAGE"
+    ],
+    [
+      441,
+      250,
+      0,
+      273,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      442,
+      251,
+      0,
+      273,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      443,
+      272,
+      0,
+      274,
+      1,
+      "CONTEXT_OPTIONS"
+    ],
+    [
+      446,
+      260,
+      0,
+      275,
+      1,
+      "LATENT"
+    ],
+    [
+      447,
+      275,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      448,
+      275,
+      1,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      457,
+      249,
+      0,
+      273,
+      2,
+      "VAE"
+    ],
+    [
+      458,
+      4,
+      1,
+      279,
+      0,
+      "*"
+    ],
+    [
+      459,
+      279,
+      0,
+      273,
+      1,
+      "CLIP"
+    ],
+    [
+      468,
+      280,
+      0,
+      268,
+      2,
+      "STRING"
+    ],
+    [
+      470,
+      283,
+      0,
+      268,
+      3,
+      "STRING"
+    ],
+    [
+      471,
+      4,
+      0,
+      248,
+      0,
+      "*"
+    ],
+    [
+      538,
+      315,
+      0,
+      268,
+      1,
+      "INT"
+    ],
+    [
+      539,
+      315,
+      0,
+      20,
+      2,
+      "INT"
+    ],
+    [
+      541,
+      316,
+      0,
+      302,
+      0,
+      "AUDIO"
+    ],
+    [
+      590,
+      348,
+      0,
+      356,
+      0,
+      "*"
+    ],
+    [
+      591,
+      356,
+      0,
+      268,
+      4,
+      "FLOAT"
+    ],
+    [
+      607,
+      302,
+      1,
+      364,
+      0,
+      "*"
+    ],
+    [
+      608,
+      364,
+      0,
+      315,
+      0,
+      "*"
+    ],
+    [
+      622,
+      302,
+      0,
+      375,
+      0,
+      "AUDIO_FFT"
+    ],
+    [
+      623,
+      375,
+      0,
+      376,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      626,
+      378,
+      0,
+      379,
+      0,
+      "IMAGE"
+    ],
+    [
+      628,
+      380,
+      0,
+      348,
+      0,
+      "*"
+    ],
+    [
+      656,
+      316,
+      0,
+      404,
+      0,
+      "AUDIO"
+    ],
+    [
+      657,
+      404,
+      0,
+      405,
+      0,
+      "IMAGE"
+    ],
+    [
+      658,
+      376,
+      0,
+      377,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      659,
+      377,
+      0,
+      378,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      660,
+      377,
+      0,
+      380,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      693,
+      430,
+      0,
+      431,
+      0,
+      "STRING"
+    ],
+    [
+      695,
+      431,
+      0,
+      271,
+      1,
+      "STRING"
+    ],
+    [
+      696,
+      433,
+      0,
+      302,
+      1,
+      "INT"
+    ],
+    [
+      697,
+      433,
+      0,
+      434,
+      0,
+      "*"
+    ],
+    [
+      698,
+      434,
+      0,
+      435,
+      0,
+      "*"
+    ],
+    [
+      699,
+      435,
+      0,
+      271,
+      2,
+      "INT"
+    ],
+    [
+      709,
+      443,
+      0,
+      437,
+      0,
+      "*"
+    ],
+    [
+      710,
+      302,
+      0,
+      438,
+      0,
+      "AUDIO_FFT"
+    ],
+    [
+      711,
+      438,
+      0,
+      439,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      712,
+      439,
+      0,
+      440,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      713,
+      440,
+      0,
+      441,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      714,
+      441,
+      0,
+      442,
+      0,
+      "IMAGE"
+    ],
+    [
+      715,
+      440,
+      0,
+      443,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      716,
+      4,
+      1,
+      444,
+      0,
+      "CLIP"
+    ],
+    [
+      717,
+      444,
+      0,
+      251,
+      0,
+      "*"
+    ],
+    [
+      718,
+      437,
+      0,
+      445,
+      0,
+      "*"
+    ],
+    [
+      720,
+      437,
+      0,
+      446,
+      0,
+      "*"
+    ],
+    [
+      721,
+      446,
+      0,
+      268,
+      5,
+      "FLOAT"
+    ],
+    [
+      723,
+      348,
+      0,
+      447,
+      0,
+      "*"
+    ],
+    [
+      724,
+      447,
+      0,
+      444,
+      2,
+      "FLOAT"
+    ],
+    [
+      725,
+      445,
+      0,
+      444,
+      3,
+      "FLOAT"
+    ],
+    [
+      726,
+      248,
+      0,
+      274,
+      0,
+      "MODEL"
+    ],
+    [
+      727,
+      274,
+      0,
+      273,
+      0,
+      "MODEL"
+    ],
+    [
+      728,
+      273,
+      0,
+      275,
+      0,
+      "BASIC_PIPE"
+    ],
+    [
+      729,
+      315,
+      0,
+      444,
+      1,
+      "INT"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Animation Generation",
+      "bounding": [
+        -545,
+        -426,
+        862,
+        1544
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": true
+    },
+    {
+      "title": "Config",
+      "bounding": [
+        -2904,
+        -505,
+        1152,
+        1194
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "locked": true
+    },
+    {
+      "title": "AnimateDiff Config",
+      "bounding": [
+        -1722,
+        -720,
+        720,
+        234
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Positive Strengths",
+      "bounding": [
+        -5290,
+        -258,
+        2317,
+        424
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Negative Strengths",
+      "bounding": [
+        -5285,
+        283,
+        2297,
+        439
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
