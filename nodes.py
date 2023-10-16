@@ -216,6 +216,114 @@ class BatchAmplitudeSchedule:
 
         return (key_frame_series,)
 
+class ClipAmplitude:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": {
+                    "amplitude": ("AMPLITUDE",),
+                    "max_amplitude": ("INT", {"default": 1000, "min": 0, "step": 1}),
+                    },
+               "optional": {
+                    "min_amplitude": ("INT", {"default": 0, "min": 0, "step": 1}),
+                    }
+                }
+
+    CATEGORY = "AudioScheduler/Amplitude"
+
+    RETURN_TYPES = ("AMPLITUDE",)
+    RETURN_NAMES = ("amplitude",)
+    FUNCTION = "clip"
+
+    def clip(self, amplitude, max_amplitude:int, min_amplitude:int=0):
+        if (min_amplitude > max_amplitude):
+            raise ValueError(f"min_amplitude '{min_amplitude}' cannot be higher than max_amplitude '{max_amplitude}'")
+
+        clipped_amp = np.where(amplitude < max_amplitude, amplitude, max_amplitude)
+        clipped_amp = np.where(min_amplitude < clipped_amp, clipped_amp, min_amplitude)
+        return (clipped_amp,)
+
+class TransientAmplitudeBasic:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": {
+                    "amplitude": ("AMPLITUDE",),
+                    },
+               "optional": {
+                    "frames_to_attack": ("INT", {"default": 0, "min": 0, "step": 1}),
+                    "frames_to_hold": ("INT", {"default": 6, "min": 0, "step": 1}),
+                    "frames_to_release": ("INT", {"default": 6, "min": 0, "step": 1}),
+                    }
+                }
+
+    CATEGORY = "AudioScheduler/Amplitude"
+
+    RETURN_TYPES = ("AMPLITUDE",)
+    RETURN_NAMES = ("amplitude",)
+    FUNCTION = "adjust"
+
+    def adjust(self, amplitude, frames_to_attack:int, frames_to_hold:int, frames_to_release:int):
+        if (frames_to_attack < 0):
+            raise ValueError(f"frames_to_attack '{frames_to_attack}' cannot be negative")
+
+        if (frames_to_hold < 0):
+            raise ValueError(f"frames_to_hold '{frames_to_hold}' cannot be negative")
+
+        if (frames_to_release < 0):
+            raise ValueError(f"frames_to_release '{frames_to_release}' cannot be negative")
+
+        if (len(amplitude) <= 1):
+            return (amplitude,)
+
+        if (frames_to_attack == 0 and frames_to_hold == 0 and frames_to_release == 0):
+            return (amplitude,)
+
+        # Calculate the rise factor based on the number of frames to attack
+        rise_factor = 1 / (frames_to_attack + 1)
+
+        # Calculate the decay factor based on the number of frames to release
+        decay_factor = 1 / (frames_to_release + 1)
+        
+        holding_frame = 0
+        local_max_amplitude = amplitude[0]
+        prev_amplitude = amplitude[0]
+        adjusted_amp = [prev_amplitude]
+        for i in range(1, len(amplitude)):
+
+            # attack
+            if (amplitude[i] >= prev_amplitude):
+                # reset and set new goal
+                holding_frame = 0
+                local_max_amplitude = amplitude[i]
+
+                # rise to the goal
+                if (frames_to_attack > 0):
+                    prev_amplitude += local_max_amplitude * rise_factor
+                    if (prev_amplitude > amplitude[i]):
+                        prev_amplitude = amplitude[i]
+                else:
+                    prev_amplitude = amplitude[i]
+                adjusted_amp.append(prev_amplitude)
+                continue
+
+            # hold
+            if (frames_to_hold > 0 and holding_frame < frames_to_hold):
+                holding_frame += 1
+                adjusted_amp.append(prev_amplitude)
+                continue
+
+            # release
+            if (frames_to_release > 0):
+                prev_amplitude -= local_max_amplitude * decay_factor
+                if (prev_amplitude < amplitude[i]):
+                    prev_amplitude = amplitude[i]
+                adjusted_amp.append(prev_amplitude)
+                continue
+
+            # no adjustments for this frame
+            adjusted_amp.append(amplitude[i])
+
+        return (adjusted_amp,)
+
 class NormalizeAmplitude:
     @classmethod
     def INPUT_TYPES(s):
@@ -381,23 +489,31 @@ NODE_CLASS_MAPPINGS = {
     "LoadAudio": LoadAudio,
     "AudioToFFTs": AudioToFFTs,
     "AudioToAmplitudeGraph": AudioToAmplitudeGraph,
+    # Amplitude
     "BatchAmplitudeSchedule": BatchAmplitudeSchedule,
+    "ClipAmplitude": ClipAmplitude,
+    "TransientAmplitudeBasic": TransientAmplitudeBasic,
+    "AmplitudeToNumber" : AmplitudeToNumber,
+    "AmplitudeToGraph" : AmplitudeToGraph,
+    # Normalized Amplitude
     "NormalizeAmplitude": NormalizeAmplitude,
     "GateNormalizedAmplitude": GateNormalizedAmplitude,
     "NormalizedAmplitudeToNumber" : NormalizedAmplitudeToNumber,
     "NormalizedAmplitudeToGraph" : NormalizedAmplitudeToGraph,
-    "AmplitudeToNumber" : AmplitudeToNumber,
-    "AmplitudeToGraph" : AmplitudeToGraph,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "LoadAudio": "Load Audio",
     "AudioToFFTs": "Audio to FFTs",
     "AudioToAmplitudeGraph": "Audio to Amplitude Graph",
+    # Amplitude
     "BatchAmplitudeSchedule": "Batch Amplitude Schedule",
+    "ClipAmplitude": "Clip Amplitude",
+    "TransientAmplitudeBasic": "Transient Amplitude Basic",
+    "AmplitudeToNumber" : "Amplitude To Float or Int",
+    "AmplitudeToGraph" : "Amplitude To Graph",
+    # Normalized Amplitude
     "NormalizeAmplitude": "Normalize Amplitude",
     "GateNormalizedAmplitude": "Gate Normalized Amplitude",
     "NormalizedAmplitudeToNumber" : "Normalized Amplitude To Float or Int",
     "NormalizedAmplitudeToGraph" : "Normalized Amplitude To Graph",
-    "AmplitudeToNumber" : "Amplitude To Float or Int",
-    "AmplitudeToGraph" : "Amplitude To Graph",
 }

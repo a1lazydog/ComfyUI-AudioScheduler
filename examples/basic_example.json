@@ -871,31 +871,6 @@
       }
     },
     {
-      "id": 379,
-      "type": "PreviewImage",
-      "pos": [
-        -4188.528412070098,
-        -168.73949147146516
-      ],
-      "size": {
-        "0": 1080,
-        "1": 290
-      },
-      "flags": {},
-      "order": 31,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 626
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
-    },
-    {
       "id": 376,
       "type": "NormalizeAmplitude",
       "pos": [
@@ -976,45 +951,11 @@
       ]
     },
     {
-      "id": 316,
-      "type": "LoadAudio",
-      "pos": [
-        -6400,
-        -600
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": [
-            541,
-            656
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadAudio"
-      },
-      "widgets_values": [
-        "Real Good Snippet.wav",
-        "Audio"
-      ]
-    },
-    {
       "id": 404,
       "type": "AudioToAmplitudeGraph",
       "pos": [
         -5310,
-        -660
+        -700
       ],
       "size": {
         "0": 315,
@@ -1048,59 +989,6 @@
         0,
         1000,
         4000
-      ]
-    },
-    {
-      "id": 274,
-      "type": "ADE_AnimateDiffLoaderWithContext",
-      "pos": [
-        -952.399951171875,
-        -535.7999633789063
-      ],
-      "size": {
-        "0": 315,
-        "1": 122
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 40,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 472
-        },
-        {
-          "name": "context_options",
-          "type": "CONTEXT_OPTIONS",
-          "link": 443,
-          "slot_index": 1
-        },
-        {
-          "name": "motion_lora",
-          "type": "MOTION_LORA",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            473
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
-      },
-      "widgets_values": [
-        "mm_sd_v15_v2.ckpt",
-        "sqrt_linear (AnimateDiff)"
       ]
     },
     {
@@ -1205,7 +1093,7 @@
         "Node name for S&R": "BatchPromptSchedule"
       },
       "widgets_values": [
-        "\"0\" :\"smile, (open mouth, laughing:`pw_a`)\",\n\"128\" :\"(open mouth, laughing:`pw_a`)\"",
+        "\"0\" :\"(laugh:`pw_a`)\",\n\"128\" :\"(laugh:`pw_a`)\"",
         120,
         "RAW photo of korean woman, ",
         "highly detailed, realistic, portrait, simple background, turtleneck sweater",
@@ -1216,77 +1104,6 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
-    },
-    {
-      "id": 271,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        -510,
-        100
-      ],
-      "size": {
-        "0": 800,
-        "1": 980
-      },
-      "flags": {},
-      "order": 44,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 436
-        },
-        {
-          "name": "filename_prefix",
-          "type": "STRING",
-          "link": 695,
-          "widget": {
-            "name": "filename_prefix",
-            "config": [
-              "STRING",
-              {
-                "default": "AnimateDiff"
-              }
-            ]
-          }
-        },
-        {
-          "name": "frame_rate",
-          "type": "INT",
-          "link": 699,
-          "widget": {
-            "name": "frame_rate",
-            "config": [
-              "INT",
-              {
-                "default": 8,
-                "min": 1,
-                "step": 1
-              }
-            ]
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "GIF",
-          "type": "GIF",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": [
-        12,
-        0,
-        "AnimateDiff/AD",
-        "video/h264-mp4",
-        false,
-        true
-      ]
     },
     {
       "id": 302,
@@ -1426,147 +1243,6 @@
         4,
         "uniform",
         false
-      ]
-    },
-    {
-      "id": 275,
-      "type": "ImpactKSamplerBasicPipe",
-      "pos": [
-        -311.66975156067997,
-        -335.3463791916187
-      ],
-      "size": {
-        "0": 315,
-        "1": 242
-      },
-      "flags": {},
-      "order": 42,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "basic_pipe",
-          "type": "BASIC_PIPE",
-          "link": 454
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 446
-        }
-      ],
-      "outputs": [
-        {
-          "name": "BASIC_PIPE",
-          "type": "BASIC_PIPE",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            448
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            447
-          ],
-          "shape": 3,
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImpactKSamplerBasicPipe"
-      },
-      "widgets_values": [
-        153435234221149,
-        "randomize",
-        25,
-        7,
-        "ddim",
-        "ddim_uniform",
-        1
-      ]
-    },
-    {
-      "id": 405,
-      "type": "PreviewImage",
-      "pos": [
-        -4930,
-        -660
-      ],
-      "size": {
-        "0": 1950,
-        "1": 330
-      },
-      "flags": {},
-      "order": 19,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 657
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -2887.103581502704,
-        -429.99626155612657
-      ],
-      "size": {
-        "0": 315,
-        "1": 98
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 9,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            471
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            427,
-            458,
-            707
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            382
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "juggernaut_final.safetensors"
       ]
     },
     {
@@ -1914,7 +1590,7 @@
         "Node name for S&R": "Text Multiline"
       },
       "widgets_values": [
-        "AnimateDiff/[time(%Y-%m-%d)]/Music"
+        "AnimateDiff/[time(%Y-%m-%d)]/BasicExample"
       ]
     },
     {
@@ -1966,6 +1642,330 @@
       "widgets_values": [
         ""
       ]
+    },
+    {
+      "id": 274,
+      "type": "ADE_AnimateDiffLoaderWithContext",
+      "pos": [
+        -952.399951171875,
+        -535.7999633789063
+      ],
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 472
+        },
+        {
+          "name": "context_options",
+          "type": "CONTEXT_OPTIONS",
+          "link": 443,
+          "slot_index": 1
+        },
+        {
+          "name": "motion_lora",
+          "type": "MOTION_LORA",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            473
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
+      },
+      "widgets_values": [
+        "mm_sd_v15_v2.ckpt",
+        "sqrt_linear (AnimateDiff)"
+      ]
+    },
+    {
+      "id": 271,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -510,
+        100
+      ],
+      "size": {
+        "0": 800,
+        "1": 980
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 436
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": 695,
+          "widget": {
+            "name": "filename_prefix",
+            "config": [
+              "STRING",
+              {
+                "default": "AnimateDiff"
+              }
+            ]
+          }
+        },
+        {
+          "name": "frame_rate",
+          "type": "INT",
+          "link": 699,
+          "widget": {
+            "name": "frame_rate",
+            "config": [
+              "INT",
+              {
+                "default": 8,
+                "min": 1,
+                "step": 1
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GIF",
+          "type": "GIF",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": [
+        12,
+        0,
+        "AnimateDiff/AD",
+        "image/gif",
+        false,
+        true
+      ]
+    },
+    {
+      "id": 275,
+      "type": "ImpactKSamplerBasicPipe",
+      "pos": [
+        -311.66975156067997,
+        -335.3463791916187
+      ],
+      "size": {
+        "0": 315,
+        "1": 242
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 454
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 446
+        }
+      ],
+      "outputs": [
+        {
+          "name": "BASIC_PIPE",
+          "type": "BASIC_PIPE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            448
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            447
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactKSamplerBasicPipe"
+      },
+      "widgets_values": [
+        153435234221149,
+        "randomize",
+        25,
+        7,
+        "dpmpp_sde_gpu",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -2870,
+        -420
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            471
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            427,
+            458,
+            707
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            382
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "juggernaut_final.safetensors"
+      ]
+    },
+    {
+      "id": 316,
+      "type": "LoadAudio",
+      "pos": [
+        -6400,
+        -600
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            541,
+            656
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "Real Good Snippet.wav",
+        "Audio"
+      ]
+    },
+    {
+      "id": 405,
+      "type": "PreviewImage",
+      "pos": [
+        -4930,
+        -700
+      ],
+      "size": {
+        "0": 1950,
+        "1": 330
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 657
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 379,
+      "type": "PreviewImage",
+      "pos": [
+        -4180,
+        -170
+      ],
+      "size": {
+        "0": 1080,
+        "1": 290
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 626
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
     }
   ],
   "links": [
@@ -2432,6 +2432,30 @@
         424
       ],
       "color": "#8A8",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Load Audio & Config",
+      "bounding": [
+        -6425,
+        -694,
+        736,
+        346
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Preview Audio",
+      "bounding": [
+        -5335,
+        -799,
+        2378,
+        470
+      ],
+      "color": "#3f789e",
       "font_size": 24,
       "locked": false
     }
