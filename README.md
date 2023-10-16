@@ -78,7 +78,68 @@ The `AudioToAmplitudeGraph` class creates a graph of the amplitude in a specifie
 
 **Description:**
 
-The `BatchAmplitudeSchedule` class calculates amplitude values from FFT data based on the specified operation and frequency range.
+The `BatchAmplitudeSchedule` class calculates amplitude values from FFT data based on the specified operation and frequency range.  You can select different frequency ranges with the lower and upper band ranges.
+
+The different operations will specific how to aggregate the amplitude within that band range.
+
+![Batch Amplitude Schedule Example](./examples/batch_amplitude_example.png)
+
+## ClipAmplitude
+
+**Input Types:**
+
+- `amplitude`: Amplitude data to be clipped.
+- `max_amplitude`: An integer specifying the maximum allowed amplitude value.
+- `min_amplitude` (Optional): An integer specifying the minimum allowed amplitude value (default is 0).
+
+**Output Types:**
+
+- `AMPLITUDE`: Clipped amplitude data.
+
+**Description:**
+
+The `ClipAmplitude` class is used to clip the amplitude values of audio data. You can specify the maximum and optional minimum allowed amplitude values. Any amplitude values exceeding the specified range will be clipped to the range.
+
+![Clip Example](./examples/clip_amplitude_example.png)
+
+## TransientAmplitudeBasic
+
+**Input Types:**
+
+- `amplitude`: Amplitude data to be adjusted.
+- `frames_to_attack` (Optional): An integer specifying the number of frames for attack (default is 0).
+- `frames_to_hold` (Optional): An integer specifying the number of frames for holding (default is 6).
+- `frames_to_release` (Optional): An integer specifying the number of frames for release (default is 6).
+
+**Output Types:**
+
+- `AMPLITUDE`: Adjusted amplitude data.
+
+**Description:**
+
+The `TransientAmplitudeBasic` class is designed to adjust amplitude data with transient characteristics. You can control the attack, hold, and release behavior by specifying the number of frames for each stage. This node is especially useful for shaping the envelope of the amplitude.
+
+The modifications are applied in the priority of attack -> hold -> release, which ever will apply first.
+
+Attack: The attack applies if the next frame's amplitude is rising.  The larger the number, the longer it'll take to rise to that frame's amplitude.  An attack of 0 will instantly jump to the next frame's amplitude if it's rising.
+
+![Attack Example](./examples/attack_amplitude_example.png)
+
+Hold: 
+The hold applies if the next frame's amplitude is falling. The larger the number, the longer it'll hold at the current amplitude.  If the next frame is rising, it'll go back to attacking, and reset the hold count.
+
+![Hold Example](./examples/hold_amplitude_example.png)
+
+Release:
+The release applies if the next frame's amplitude is falling and after all the hold frame are done. The larger the number, the longer it'll take to fall to the next amplitude.
+
+![Release Example](./examples/release_amplitude_example.png)
+
+The attack and release are applied on a linear scale (though the target amplitude is chosen greedily for simplicity.  You may find it's not quite linear depending on your amplitude wave.)
+
+**Note:** 
+- A negative value for frames (frames_to_attack, frames_to_hold, frames_to_release) is not allowed.
+- If no frames are specified for attack, hold, or release, the input amplitude data remains unchanged.
 
 ## NormalizeAmplitude
 
