@@ -82,7 +82,7 @@ The `BatchAmplitudeSchedule` class calculates amplitude values from FFT data bas
 
 The different operations will specific how to aggregate the amplitude within that band range.
 
-![Batch Amplitude Schedule Example](./examples/batch_amplitude_example.png)
+![Batch Amplitude Schedule Example](./examples/batch_amplitude_example.PNG)
 
 ## ClipAmplitude
 
@@ -100,7 +100,7 @@ The different operations will specific how to aggregate the amplitude within tha
 
 The `ClipAmplitude` class is used to clip the amplitude values of audio data. You can specify the maximum and optional minimum allowed amplitude values. Any amplitude values exceeding the specified range will be clipped to the range.
 
-![Clip Example](./examples/clip_amplitude_example.png)
+![Clip Example](./examples/clip_amplitude_example.PNG)
 
 ## TransientAmplitudeBasic
 
@@ -123,17 +123,17 @@ The modifications are applied in the priority of attack -> hold -> release, whic
 
 Attack: The attack applies if the next frame's amplitude is rising.  The larger the number, the longer it'll take to rise to that frame's amplitude.  An attack of 0 will instantly jump to the next frame's amplitude if it's rising.
 
-![Attack Example](./examples/attack_amplitude_example.png)
+![Attack Example](./examples/attack_amplitude_example.PNG)
 
 Hold: 
 The hold applies if the next frame's amplitude is falling. The larger the number, the longer it'll hold at the current amplitude.  If the next frame is rising, it'll go back to attacking, and reset the hold count.
 
-![Hold Example](./examples/hold_amplitude_example.png)
+![Hold Example](./examples/hold_amplitude_example.PNG)
 
 Release:
 The release applies if the next frame's amplitude is falling and after all the hold frame are done. The larger the number, the longer it'll take to fall to the next amplitude.
 
-![Release Example](./examples/release_amplitude_example.png)
+![Release Example](./examples/release_amplitude_example.PNG)
 
 The attack and release are applied on a linear scale (though the target amplitude is chosen greedily for simplicity.  You may find it's not quite linear depending on your amplitude wave.)
 
