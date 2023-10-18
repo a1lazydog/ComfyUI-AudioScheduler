@@ -320,7 +320,8 @@ class TransientAmplitudeBasic:
                 continue
 
             # no adjustments for this frame
-            adjusted_amp.append(amplitude[i])
+            prev_amplitude = amplitude[i]
+            adjusted_amp.append(prev_amplitude)
 
         return (adjusted_amp,)
 
