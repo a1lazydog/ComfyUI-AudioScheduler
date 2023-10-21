@@ -1,6 +1,6 @@
 {
-  "last_node_id": 435,
-  "last_link_id": 699,
+  "last_node_id": 440,
+  "last_link_id": 721,
   "nodes": [
     {
       "id": 250,
@@ -14,7 +14,7 @@
         26
       ],
       "flags": {},
-      "order": 94,
+      "order": 93,
       "mode": 0,
       "inputs": [
         {
@@ -52,7 +52,7 @@
         26
       ],
       "flags": {},
-      "order": 95,
+      "order": 94,
       "mode": 0,
       "inputs": [
         {
@@ -222,8 +222,8 @@
         26
       ],
       "flags": {},
-      "order": 91,
-      "mode": 0,
+      "order": 90,
+      "mode": 4,
       "inputs": [
         {
           "name": "",
@@ -260,8 +260,8 @@
       "flags": {
         "collapsed": true
       },
-      "order": 99,
-      "mode": 0,
+      "order": 98,
+      "mode": 4,
       "inputs": [
         {
           "name": "basic_pipe",
@@ -323,8 +323,8 @@
       "flags": {
         "collapsed": true
       },
-      "order": 101,
-      "mode": 0,
+      "order": 100,
+      "mode": 4,
       "inputs": [
         {
           "name": "samples",
@@ -365,7 +365,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 97,
+      "order": 96,
       "mode": 0,
       "inputs": [
         {
@@ -475,7 +475,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 96,
+      "order": 95,
       "mode": 0,
       "inputs": [
         {
@@ -601,7 +601,7 @@
         26
       ],
       "flags": {},
-      "order": 69,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -637,7 +637,7 @@
         26
       ],
       "flags": {},
-      "order": 86,
+      "order": 85,
       "mode": 0,
       "inputs": [
         {
@@ -675,7 +675,7 @@
         26
       ],
       "flags": {},
-      "order": 85,
+      "order": 84,
       "mode": 0,
       "inputs": [
         {
@@ -713,7 +713,7 @@
         26
       ],
       "flags": {},
-      "order": 84,
+      "order": 69,
       "mode": 0,
       "inputs": [
         {
@@ -751,7 +751,7 @@
         26
       ],
       "flags": {},
-      "order": 89,
+      "order": 88,
       "mode": 0,
       "inputs": [
         {
@@ -790,7 +790,7 @@
         26
       ],
       "flags": {},
-      "order": 90,
+      "order": 89,
       "mode": 0,
       "inputs": [
         {
@@ -829,7 +829,7 @@
         26
       ],
       "flags": {},
-      "order": 88,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -868,7 +868,7 @@
         26
       ],
       "flags": {},
-      "order": 87,
+      "order": 86,
       "mode": 0,
       "inputs": [
         {
@@ -1068,7 +1068,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 48,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -1155,7 +1155,7 @@
         26
       ],
       "flags": {},
-      "order": 65,
+      "order": 66,
       "mode": 0,
       "inputs": [
         {
@@ -1287,7 +1287,7 @@
         26
       ],
       "flags": {},
-      "order": 67,
+      "order": 68,
       "mode": 0,
       "inputs": [
         {
@@ -1323,7 +1323,7 @@
         "1": 50
       },
       "flags": {},
-      "order": 50,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -1354,45 +1354,6 @@
       }
     },
     {
-      "id": 384,
-      "type": "NormalizeAmplitude",
-      "pos": [
-        -5121.079949483983,
-        -1385.2098947308082
-      ],
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 32,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "link": 633
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            634
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "NormalizeAmplitude"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
       "id": 386,
       "type": "NormalizedAmplitudeToGraph",
       "pos": [
@@ -1404,13 +1365,13 @@
         "1": 30
       },
       "flags": {},
-      "order": 51,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 661
+          "link": 708
         }
       ],
       "outputs": [
@@ -1440,7 +1401,7 @@
         "1": 290
       },
       "flags": {},
-      "order": 68,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -1465,13 +1426,13 @@
         "1": 50
       },
       "flags": {},
-      "order": 52,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 662
+          "link": 709
         }
       ],
       "outputs": [
@@ -1496,45 +1457,6 @@
       }
     },
     {
-      "id": 390,
-      "type": "NormalizeAmplitude",
-      "pos": [
-        -5121.079949483983,
-        -1035.2098947308082
-      ],
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 33,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "link": 640
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            641
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "NormalizeAmplitude"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
       "id": 392,
       "type": "NormalizedAmplitudeToGraph",
       "pos": [
@@ -1546,13 +1468,13 @@
         "1": 30
       },
       "flags": {},
-      "order": 54,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 663
+          "link": 703
         }
       ],
       "outputs": [
@@ -1607,13 +1529,13 @@
         "1": 50
       },
       "flags": {},
-      "order": 53,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 644
+          "link": 702
         }
       ],
       "outputs": [
@@ -1674,45 +1596,6 @@
       }
     },
     {
-      "id": 396,
-      "type": "NormalizeAmplitude",
-      "pos": [
-        -5115.380423030829,
-        -700.1110113815153
-      ],
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 34,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "link": 647
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            648
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "NormalizeAmplitude"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
       "id": 398,
       "type": "NormalizedAmplitudeToGraph",
       "pos": [
@@ -1724,13 +1607,13 @@
         "1": 30
       },
       "flags": {},
-      "order": 56,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 664
+          "link": 705
         }
       ],
       "outputs": [
@@ -1785,13 +1668,13 @@
         "1": 50
       },
       "flags": {},
-      "order": 55,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 651
+          "link": 704
         }
       ],
       "outputs": [
@@ -1852,47 +1735,6 @@
       }
     },
     {
-      "id": 395,
-      "type": "BatchAmplitudeSchedule",
-      "pos": [
-        -5375.380423030829,
-        -700.1110113815153
-      ],
-      "size": {
-        "0": 230,
-        "1": 110
-      },
-      "flags": {},
-      "order": 24,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "audio_fft",
-          "type": "AUDIO_FFT",
-          "link": 646
-        }
-      ],
-      "outputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "links": [
-            647
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BatchAmplitudeSchedule"
-      },
-      "widgets_values": [
-        "max",
-        4000,
-        10000
-      ]
-    },
-    {
       "id": 378,
       "type": "NormalizedAmplitudeToGraph",
       "pos": [
@@ -1904,7 +1746,7 @@
         "1": 30
       },
       "flags": {},
-      "order": 49,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -1940,7 +1782,7 @@
         "1": 290
       },
       "flags": {},
-      "order": 66,
+      "order": 67,
       "mode": 0,
       "inputs": [
         {
@@ -2115,47 +1957,6 @@
       ]
     },
     {
-      "id": 389,
-      "type": "BatchAmplitudeSchedule",
-      "pos": [
-        -5381.079949483983,
-        -1035.2098947308082
-      ],
-      "size": {
-        "0": 230,
-        "1": 110
-      },
-      "flags": {},
-      "order": 23,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "audio_fft",
-          "type": "AUDIO_FFT",
-          "link": 639
-        }
-      ],
-      "outputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "links": [
-            640
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BatchAmplitudeSchedule"
-      },
-      "widgets_values": [
-        "avg",
-        2000,
-        4000
-      ]
-    },
-    {
       "id": 406,
       "type": "BatchAmplitudeSchedule",
       "pos": [
@@ -2208,7 +2009,7 @@
         "1": 30
       },
       "flags": {},
-      "order": 57,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -2244,13 +2045,13 @@
         "1": 30
       },
       "flags": {},
-      "order": 59,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 674
+          "link": 710
         }
       ],
       "outputs": [
@@ -2294,47 +2095,6 @@
       }
     },
     {
-      "id": 418,
-      "type": "BatchAmplitudeSchedule",
-      "pos": [
-        -5342.062283949013,
-        444.1157151906939
-      ],
-      "size": {
-        "0": 230,
-        "1": 110
-      },
-      "flags": {},
-      "order": 27,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "audio_fft",
-          "type": "AUDIO_FFT",
-          "link": 677
-        }
-      ],
-      "outputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "links": [
-            678
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BatchAmplitudeSchedule"
-      },
-      "widgets_values": [
-        "avg",
-        2000,
-        4000
-      ]
-    },
-    {
       "id": 421,
       "type": "NormalizedAmplitudeToGraph",
       "pos": [
@@ -2346,13 +2106,13 @@
         "1": 30
       },
       "flags": {},
-      "order": 61,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 680
+          "link": 714
         }
       ],
       "outputs": [
@@ -2396,47 +2156,6 @@
       }
     },
     {
-      "id": 424,
-      "type": "BatchAmplitudeSchedule",
-      "pos": [
-        -5342.062283949013,
-        784.1157151906939
-      ],
-      "size": {
-        "0": 230,
-        "1": 110
-      },
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "audio_fft",
-          "type": "AUDIO_FFT",
-          "link": 683
-        }
-      ],
-      "outputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "links": [
-            684
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BatchAmplitudeSchedule"
-      },
-      "widgets_values": [
-        "max",
-        4000,
-        10000
-      ]
-    },
-    {
       "id": 427,
       "type": "NormalizedAmplitudeToGraph",
       "pos": [
@@ -2448,13 +2167,13 @@
         "1": 30
       },
       "flags": {},
-      "order": 63,
+      "order": 64,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 686
+          "link": 718
         }
       ],
       "outputs": [
@@ -2509,7 +2228,7 @@
         "1": 50
       },
       "flags": {},
-      "order": 58,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -2551,13 +2270,13 @@
         "1": 50
       },
       "flags": {},
-      "order": 60,
+      "order": 61,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 676
+          "link": 711
         }
       ],
       "outputs": [
@@ -2593,13 +2312,13 @@
         "1": 50
       },
       "flags": {},
-      "order": 62,
+      "order": 63,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 682
+          "link": 715
         }
       ],
       "outputs": [
@@ -2635,13 +2354,13 @@
         "1": 50
       },
       "flags": {},
-      "order": 64,
+      "order": 65,
       "mode": 0,
       "inputs": [
         {
           "name": "normalized_amp",
           "type": "NORMALIZED_AMPLITUDE",
-          "link": 688
+          "link": 719
         }
       ],
       "outputs": [
@@ -2849,203 +2568,6 @@
       ]
     },
     {
-      "id": 413,
-      "type": "NormalizeAmplitude",
-      "pos": [
-        -5082.062283949013,
-        94.11571519069375
-      ],
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 36,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "link": 672
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            673
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "NormalizeAmplitude"
-      },
-      "widgets_values": [
-        true
-      ]
-    },
-    {
-      "id": 419,
-      "type": "NormalizeAmplitude",
-      "pos": [
-        -5082.062283949013,
-        444.1157151906939
-      ],
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 37,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "link": 678
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            679
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "NormalizeAmplitude"
-      },
-      "widgets_values": [
-        true
-      ]
-    },
-    {
-      "id": 425,
-      "type": "NormalizeAmplitude",
-      "pos": [
-        -5082.062283949013,
-        784.1157151906939
-      ],
-      "size": {
-        "0": 210,
-        "1": 60
-      },
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "link": 684
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            685
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "NormalizeAmplitude"
-      },
-      "widgets_values": [
-        true
-      ]
-    },
-    {
-      "id": 420,
-      "type": "GateNormalizedAmplitude",
-      "pos": [
-        -4842.062283949013,
-        444.1157151906939
-      ],
-      "size": {
-        "0": 250,
-        "1": 60
-      },
-      "flags": {},
-      "order": 46,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "link": 679
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            680,
-            682
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GateNormalizedAmplitude"
-      },
-      "widgets_values": [
-        0.5
-      ]
-    },
-    {
-      "id": 426,
-      "type": "GateNormalizedAmplitude",
-      "pos": [
-        -4842.062283949013,
-        784.1157151906939
-      ],
-      "size": {
-        "0": 250,
-        "1": 60
-      },
-      "flags": {},
-      "order": 47,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "link": 685
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            686,
-            688
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GateNormalizedAmplitude"
-      },
-      "widgets_values": [
-        0.8
-      ]
-    },
-    {
       "id": 408,
       "type": "GateNormalizedAmplitude",
       "pos": [
@@ -3057,7 +2579,7 @@
         "1": 60
       },
       "flags": {},
-      "order": 44,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -3083,87 +2605,6 @@
       },
       "widgets_values": [
         0.7000000000000001
-      ]
-    },
-    {
-      "id": 414,
-      "type": "GateNormalizedAmplitude",
-      "pos": [
-        -4842.062283949013,
-        94.11571519069375
-      ],
-      "size": {
-        "0": 250,
-        "1": 60
-      },
-      "flags": {},
-      "order": 45,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "link": 673
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            674,
-            676
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GateNormalizedAmplitude"
-      },
-      "widgets_values": [
-        0.7000000000000001
-      ]
-    },
-    {
-      "id": 412,
-      "type": "BatchAmplitudeSchedule",
-      "pos": [
-        -5342.062283949013,
-        94.11571519069375
-      ],
-      "size": {
-        "0": 230,
-        "1": 110
-      },
-      "flags": {},
-      "order": 26,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "audio_fft",
-          "type": "AUDIO_FFT",
-          "link": 671
-        }
-      ],
-      "outputs": [
-        {
-          "name": "amplitude",
-          "type": "AMPLITUDE",
-          "links": [
-            672
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BatchAmplitudeSchedule"
-      },
-      "widgets_values": [
-        "avg",
-        350,
-        450
       ]
     },
     {
@@ -3339,7 +2780,7 @@
       },
       "flags": {},
       "order": 10,
-      "mode": 0,
+      "mode": 4,
       "outputs": [
         {
           "name": "STRING",
@@ -3374,7 +2815,7 @@
         "collapsed": true
       },
       "order": 17,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "text",
@@ -3423,7 +2864,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 98,
+      "order": 97,
       "mode": 0,
       "inputs": [
         {
@@ -3474,7 +2915,7 @@
         "1": 340
       },
       "flags": {},
-      "order": 93,
+      "order": 92,
       "mode": 0,
       "inputs": [
         {
@@ -3639,7 +3080,7 @@
         "1": 350
       },
       "flags": {},
-      "order": 92,
+      "order": 91,
       "mode": 0,
       "inputs": [
         {
@@ -3835,13 +3276,13 @@
         -510,
         100
       ],
-      "size": [
-        800,
-        980
-      ],
+      "size": {
+        "0": 800,
+        "1": 980
+      },
       "flags": {},
-      "order": 102,
-      "mode": 0,
+      "order": 101,
+      "mode": 4,
       "inputs": [
         {
           "name": "images",
@@ -3896,8 +3337,7 @@
         "AnimateDiff/AD",
         "video/h264-mp4",
         false,
-        true,
-        "/view?filename=Music_00002_.mp4&subfolder=AnimateDiff%5C2023-10-11&type=output&format=video%2Fh264-mp4"
+        true
       ]
     },
     {
@@ -3979,10 +3419,10 @@
         -6040,
         -600
       ],
-      "size": [
-        320,
-        150
-      ],
+      "size": {
+        "0": 320,
+        "1": 150
+      },
       "flags": {},
       "order": 18,
       "mode": 0,
@@ -4056,10 +3496,10 @@
         -6300,
         -460
       ],
-      "size": [
-        210,
-        60
-      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
       "flags": {},
       "order": 11,
       "mode": 0,
@@ -4120,126 +3560,6 @@
       ]
     },
     {
-      "id": 385,
-      "type": "GateNormalizedAmplitude",
-      "pos": [
-        -4881.079949483983,
-        -1385.2098947308082
-      ],
-      "size": {
-        "0": 250,
-        "1": 60
-      },
-      "flags": {},
-      "order": 41,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "link": 634
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            661,
-            662
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GateNormalizedAmplitude"
-      },
-      "widgets_values": [
-        0
-      ]
-    },
-    {
-      "id": 391,
-      "type": "GateNormalizedAmplitude",
-      "pos": [
-        -4881.079949483983,
-        -1035.2098947308082
-      ],
-      "size": {
-        "0": 250,
-        "1": 60
-      },
-      "flags": {},
-      "order": 42,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "link": 641
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            644,
-            663
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GateNormalizedAmplitude"
-      },
-      "widgets_values": [
-        0.2
-      ]
-    },
-    {
-      "id": 397,
-      "type": "GateNormalizedAmplitude",
-      "pos": [
-        -4875.380423030829,
-        -700.1110113815153
-      ],
-      "size": {
-        "0": 250,
-        "1": 60
-      },
-      "flags": {},
-      "order": 43,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "link": 648
-        }
-      ],
-      "outputs": [
-        {
-          "name": "normalized_amp",
-          "type": "NORMALIZED_AMPLITUDE",
-          "links": [
-            651,
-            664
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "GateNormalizedAmplitude"
-      },
-      "widgets_values": [
-        0.25
-      ]
-    },
-    {
       "id": 275,
       "type": "ImpactKSamplerBasicPipe",
       "pos": [
@@ -4251,8 +3571,8 @@
         "1": 242
       },
       "flags": {},
-      "order": 100,
-      "mode": 0,
+      "order": 99,
+      "mode": 4,
       "inputs": [
         {
           "name": "basic_pipe",
@@ -4295,13 +3615,661 @@
         "Node name for S&R": "ImpactKSamplerBasicPipe"
       },
       "widgets_values": [
-        495093773244980,
+        1095296331755756,
         "randomize",
         25,
         7,
         "ddim",
         "ddim_uniform",
         1
+      ]
+    },
+    {
+      "id": 390,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -4859,
+        -1037
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 701
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            702,
+            703
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 436,
+      "type": "TransientAmplitudeBasic",
+      "pos": [
+        -5092,
+        -1038
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 700
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            701
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TransientAmplitudeBasic"
+      },
+      "widgets_values": [
+        0,
+        6,
+        6
+      ]
+    },
+    {
+      "id": 389,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5379,
+        -1038
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 639
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            700
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "avg",
+        2000,
+        4000
+      ]
+    },
+    {
+      "id": 396,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -4846,
+        -699
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 707
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            704,
+            705
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 395,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5375.380423030829,
+        -700.1110113815153
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 646
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            706
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "max",
+        4000,
+        10000
+      ]
+    },
+    {
+      "id": 437,
+      "type": "ClipAmplitude",
+      "pos": [
+        -5098,
+        -700
+      ],
+      "size": [
+        211.0274163818358,
+        82
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 706
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            707
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ClipAmplitude"
+      },
+      "widgets_values": [
+        1000,
+        0
+      ]
+    },
+    {
+      "id": 384,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -5121.079949483983,
+        -1385.2098947308082
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 633
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            708,
+            709
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 413,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -4861,
+        93
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 713
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            710,
+            711
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 412,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5343,
+        94
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 671
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            712
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "sum",
+        350,
+        450
+      ]
+    },
+    {
+      "id": 438,
+      "type": "TransientAmplitudeBasic",
+      "pos": [
+        -5090,
+        95
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 712
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            713
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TransientAmplitudeBasic"
+      },
+      "widgets_values": [
+        12,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 418,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5342.062283949013,
+        444.1157151906939
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 677
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            716
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "avg",
+        2000,
+        4000
+      ]
+    },
+    {
+      "id": 425,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -4824,
+        782
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 721
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            718,
+            719
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 424,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        -5342.062283949013,
+        784.1157151906939
+      ],
+      "size": {
+        "0": 230,
+        "1": 110
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 683
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            720
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "max",
+        4000,
+        10000
+      ]
+    },
+    {
+      "id": 440,
+      "type": "TransientAmplitudeBasic",
+      "pos": [
+        -5074,
+        784
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 720
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            721
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TransientAmplitudeBasic"
+      },
+      "widgets_values": [
+        6,
+        12,
+        0
+      ]
+    },
+    {
+      "id": 419,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        -4820,
+        443
+      ],
+      "size": {
+        "0": 210,
+        "1": 60
+      },
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 717
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            714,
+            715
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 439,
+      "type": "ClipAmplitude",
+      "pos": [
+        -5072,
+        443
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 716
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            717
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ClipAmplitude"
+      },
+      "widgets_values": [
+        75,
+        50
       ]
     }
   ],
@@ -4787,14 +4755,6 @@
       "AMPLITUDE"
     ],
     [
-      634,
-      384,
-      0,
-      385,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
       636,
       386,
       0,
@@ -4819,36 +4779,12 @@
       "AUDIO_FFT"
     ],
     [
-      640,
-      389,
-      0,
-      390,
-      0,
-      "AMPLITUDE"
-    ],
-    [
-      641,
-      390,
-      0,
-      391,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
       643,
       392,
       0,
       393,
       0,
       "IMAGE"
-    ],
-    [
-      644,
-      391,
-      0,
-      394,
-      0,
-      "NORMALIZED_AMPLITUDE"
     ],
     [
       645,
@@ -4867,36 +4803,12 @@
       "AUDIO_FFT"
     ],
     [
-      647,
-      395,
-      0,
-      396,
-      0,
-      "AMPLITUDE"
-    ],
-    [
-      648,
-      396,
-      0,
-      397,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
       650,
       398,
       0,
       399,
       0,
       "IMAGE"
-    ],
-    [
-      651,
-      397,
-      0,
-      400,
-      0,
-      "NORMALIZED_AMPLITUDE"
     ],
     [
       652,
@@ -4943,38 +4855,6 @@
       377,
       0,
       380,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      661,
-      385,
-      0,
-      386,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      662,
-      385,
-      0,
-      388,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      663,
-      391,
-      0,
-      392,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      664,
-      397,
-      0,
-      398,
       0,
       "NORMALIZED_AMPLITUDE"
     ],
@@ -5035,44 +4915,12 @@
       "AUDIO_FFT"
     ],
     [
-      672,
-      412,
-      0,
-      413,
-      0,
-      "AMPLITUDE"
-    ],
-    [
-      673,
-      413,
-      0,
-      414,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      674,
-      414,
-      0,
-      415,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
       675,
       415,
       0,
       416,
       0,
       "IMAGE"
-    ],
-    [
-      676,
-      414,
-      0,
-      417,
-      0,
-      "NORMALIZED_AMPLITUDE"
     ],
     [
       677,
@@ -5083,44 +4931,12 @@
       "AUDIO_FFT"
     ],
     [
-      678,
-      418,
-      0,
-      419,
-      0,
-      "AMPLITUDE"
-    ],
-    [
-      679,
-      419,
-      0,
-      420,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      680,
-      420,
-      0,
-      421,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
       681,
       421,
       0,
       422,
       0,
       "IMAGE"
-    ],
-    [
-      682,
-      420,
-      0,
-      423,
-      0,
-      "NORMALIZED_AMPLITUDE"
     ],
     [
       683,
@@ -5131,44 +4947,12 @@
       "AUDIO_FFT"
     ],
     [
-      684,
-      424,
-      0,
-      425,
-      0,
-      "AMPLITUDE"
-    ],
-    [
-      685,
-      425,
-      0,
-      426,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
-      686,
-      426,
-      0,
-      427,
-      0,
-      "NORMALIZED_AMPLITUDE"
-    ],
-    [
       687,
       427,
       0,
       428,
       0,
       "IMAGE"
-    ],
-    [
-      688,
-      426,
-      0,
-      429,
-      0,
-      "NORMALIZED_AMPLITUDE"
     ],
     [
       689,
@@ -5249,6 +5033,182 @@
       271,
       2,
       "INT"
+    ],
+    [
+      700,
+      389,
+      0,
+      436,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      701,
+      436,
+      0,
+      390,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      702,
+      390,
+      0,
+      394,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      703,
+      390,
+      0,
+      392,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      704,
+      396,
+      0,
+      400,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      705,
+      396,
+      0,
+      398,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      706,
+      395,
+      0,
+      437,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      707,
+      437,
+      0,
+      396,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      708,
+      384,
+      0,
+      386,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      709,
+      384,
+      0,
+      388,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      710,
+      413,
+      0,
+      415,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      711,
+      413,
+      0,
+      417,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      712,
+      412,
+      0,
+      438,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      713,
+      438,
+      0,
+      413,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      714,
+      419,
+      0,
+      421,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      715,
+      419,
+      0,
+      423,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      716,
+      418,
+      0,
+      439,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      717,
+      439,
+      0,
+      419,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      718,
+      425,
+      0,
+      427,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      719,
+      425,
+      0,
+      429,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      720,
+      424,
+      0,
+      440,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      721,
+      440,
+      0,
+      425,
+      0,
+      "AMPLITUDE"
     ]
   ],
   "groups": [

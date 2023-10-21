@@ -7,11 +7,9 @@ Features:
 
 This repository contains a collection of audio processing nodes that are part of the AudioScheduler project. These nodes can be used to perform various operations on audio data, such as loading audio, performing Fast Fourier Transforms (FFTs), and manipulating amplitude data.  You can use them to control animations in your AI generation
 
-# Examples
+# Install
 
-![Basic Example](./examples/basic_example.png)
-![Two Amplitude Example](./examples/two_amplitude_example.png)
-![Full Example](./examples/full_example.png)
+Install using the ComfyUI Manager.  Look for ComfyUI-AudioScheduler.
 
 # Nodes
 
@@ -229,3 +227,26 @@ The `AmplitudeToNumber` class converts amplitude data to float or integer values
 The `AmplitudeToGraph` class generates a graph to visualize the amplitude data.
 
 Feel free to explore and use these nodes for your audio processing tasks. Detailed documentation for each node is available within the code and can be accessed as needed.
+
+
+# Example
+
+## Basic Example
+
+Takes an audio file, finds the amplitude within a frequency range, normalizes it and sends it off.
+
+![Basic Example](./examples/basic_example.png)
+
+Result:
+
+![Basic Example Output](./examples/basic_example.gif)
+
+## Using multiple frequency ranges
+
+We can use the amplitude to power one set of conditions. And the inverse to power another set.
+
+![Two Amplitude Example](./examples/two_amplitude_example.png)
+
+You can use different frequencies bands to power different conditions both in the positive and negative prompts.
+
+![Full Example](./examples/full_example.png)
