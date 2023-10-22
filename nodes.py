@@ -9,8 +9,15 @@ import torch
 
 from pydub import AudioSegment
 from PIL import Image
+from itertools import cycle
 
 from.audio import AudioData, AudioFFTData
+
+defaultPrompt="""Rabbit
+Dog
+Cat
+One prompt per line
+"""
 
 # PIL to Tensor
 def pil2tensor(image):
@@ -424,6 +431,46 @@ class NormalizedAmplitudeToGraph:
 
         return (pil2tensor(image),)
     
+class NormalizedAmplitudeDrivenString:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": {
+                    "text": ("STRING", {"multiline": True, "default": defaultPrompt}),
+                    "normalized_amp": ("NORMALIZED_AMPLITUDE",),
+                    "triggering_threshold": ("FLOAT", {"default": 0.6, "min": 0.0, "max": 1.0, "step": 0.01}),
+                     },                          
+               "optional": {
+                    "loop": ("BOOLEAN", {"default": True},),
+                    }
+                }
+
+    CATEGORY = "AudioScheduler/Amplitude"
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text",)
+    
+    FUNCTION = "convert"
+
+    def convert(self, text, normalized_amp, triggering_threshold, loop):
+        prompts = text.splitlines()
+
+        keyframes = self.get_keyframes(normalized_amp, triggering_threshold)
+
+        if loop:
+            prompts_cycle = cycle(prompts)
+            result = ['"{}": "{}"'.format(keyframe, next(prompts_cycle)) for keyframe in keyframes ]
+        else:
+            result = ['"{}": "{}"'.format(keyframe, prompt) for keyframe, prompt in zip(keyframes, prompts)]
+        result_string = ',\n'.join(result)
+
+        return (result_string,)
+
+    def get_keyframes(self, normalized_amp, triggering_threshold):
+        above_threshold = normalized_amp >= triggering_threshold
+        above_threshold = np.insert(above_threshold, 0, False)  # Add False to the beginning
+        transition = np.diff(above_threshold.astype(int))
+        keyframes = np.where(transition == 1)[0]
+        return keyframes
 
 class AmplitudeToNumber:
     @classmethod
@@ -501,6 +548,7 @@ NODE_CLASS_MAPPINGS = {
     "GateNormalizedAmplitude": GateNormalizedAmplitude,
     "NormalizedAmplitudeToNumber" : NormalizedAmplitudeToNumber,
     "NormalizedAmplitudeToGraph" : NormalizedAmplitudeToGraph,
+    "NormalizedAmplitudeDrivenString" : NormalizedAmplitudeDrivenString
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "LoadAudio": "Load Audio",
@@ -517,4 +565,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "GateNormalizedAmplitude": "Gate Normalized Amplitude",
     "NormalizedAmplitudeToNumber" : "Normalized Amplitude To Float or Int",
     "NormalizedAmplitudeToGraph" : "Normalized Amplitude To Graph",
+    "NormalizedAmplitudeDrivenString" : "Normalized Amplitude Driven String"
 }
