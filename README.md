@@ -168,6 +168,35 @@ The `NormalizeAmplitude` class normalizes the amplitude data, optionally inverti
 
 The `GateNormalizedAmplitude` class gates the normalized amplitude data based on the specified threshold.
 
+## Normalized Amplitude Driven String
+
+The `NormalizedAmplitudeDrivenString` class is part of the AudioScheduler project and is designed for generating text prompts based on audio amplitude data. This class allows you to create a dynamic string of text driven by changes in the normalized amplitude of audio signals.
+
+**Input Types:**
+
+- **text**: A list of prompts. One prompt per newline.
+- **normalized_amp**: Normalized amplitude data.
+- **triggering_threshold**: A floating-point value (between 0.0 and 1.0) representing the triggering threshold for amplitude changes.
+- **loop** (Default: True): A boolean value that determines whether the text prompts should loop when there are more keyframes than prompts.
+- **shuffle** (Default: False): A boolean value that controls whether the text prompts should be shuffled randomly.
+
+**Output Types:**
+
+The class produces a string output containing text prompts.
+
+**Description:**
+
+The `NormalizedAmplitudeDrivenString` class converts amplitude data and text prompts into a dynamic text string. It does so by identifying keyframes in the amplitude data where the normalized amplitude exceeds the triggering threshold. These keyframes are used to trigger text prompts.
+
+The behavior can be customized using optional inputs:
+- If `loop` is set to `True`, the text prompts will loop when there are more prompts than keyframes.
+- If `shuffle` is set to `True`, the text prompts will be randomly shuffled.
+
+**Example:**
+
+In this example, when the graph is above 0.6, it'll switch to the next prompt in the list. It'll shuffle the full list of prompts and loop through them all.
+![NormalizedAmplitudeDrivenString Example](./examples/amplitude_driven_string_example.PNG)
+
 ## NormalizedAmplitudeToNumber
 
 **Input Types:**
