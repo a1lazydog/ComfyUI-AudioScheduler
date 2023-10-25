@@ -446,12 +446,25 @@ class NormalizedAmplitudeDrivenString:
                     }
                 }
 
+    @classmethod
+    def IS_CHANGED(self, text, normalized_amp, triggering_threshold, loop, shuffle):
+        if shuffle:
+            return float("nan")
+        m = hashlib.sha256()
+        m.update(text)
+        m.update(normalized_amp)
+        m.update(triggering_threshold)
+        m.update(loop)
+        return m.digest().hex()
+
+
     CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text",)
 
     FUNCTION = "convert"
+        
 
     def convert(self, text, normalized_amp, triggering_threshold, loop, shuffle):
         prompts = text.splitlines()
