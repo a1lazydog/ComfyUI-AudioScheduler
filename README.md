@@ -194,6 +194,7 @@ The behavior can be customized using optional inputs:
 
 **Example:**
 
+In this example, when the graph is above 0.6, it'll switch to the next prompt in the list. It'll shuffle the full list of prompts and loop through them all.
 ![NormalizedAmplitudeDrivenString Example](./examples/amplitude_driven_string_example.PNG)
 
 ## NormalizedAmplitudeToNumber
