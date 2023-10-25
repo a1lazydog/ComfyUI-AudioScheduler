@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import torch
+import random
 
 from pydub import AudioSegment
 from PIL import Image
@@ -441,6 +442,7 @@ class NormalizedAmplitudeDrivenString:
                      },                          
                "optional": {
                     "loop": ("BOOLEAN", {"default": True},),
+                    "shuffle": ("BOOLEAN", {"default": False},),
                     }
                 }
 
@@ -448,19 +450,28 @@ class NormalizedAmplitudeDrivenString:
 
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text",)
-    
+
     FUNCTION = "convert"
 
-    def convert(self, text, normalized_amp, triggering_threshold, loop):
+    def convert(self, text, normalized_amp, triggering_threshold, loop, shuffle):
         prompts = text.splitlines()
 
         keyframes = self.get_keyframes(normalized_amp, triggering_threshold)
 
         if loop:
-            prompts_cycle = cycle(prompts)
-            result = ['"{}": "{}"'.format(keyframe, next(prompts_cycle)) for keyframe in keyframes ]
-        else:
+            i = 0
+            result = []
+            for _ in range(len(keyframes) // len(prompts)):
+                if shuffle:
+                    random.shuffle(prompts)
+                for prompt in prompts:
+                    result.append('"{}": "{}"'.format(keyframes[i], prompt))
+                    i += 1
+        else: # normal
+            if shuffle:
+                random.shuffle(prompts)
             result = ['"{}": "{}"'.format(keyframe, prompt) for keyframe, prompt in zip(keyframes, prompts)]
+
         result_string = ',\n'.join(result)
 
         return (result_string,)
