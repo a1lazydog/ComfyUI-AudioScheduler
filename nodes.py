@@ -471,7 +471,7 @@ class NormalizedAmplitudeDrivenString:
 
         keyframes = self.get_keyframes(normalized_amp, triggering_threshold)
 
-        if loop:
+        if loop and len(prompts) < len(keyframes): # Only loop if there's more prompts than keyframes
             i = 0
             result = []
             for _ in range(len(keyframes) // len(prompts)):
