@@ -120,6 +120,8 @@ class AudioToFFTs:
 
         if (limit_frames > 0 and start_at_frame + limit_frames < total_frames):
             end_at_frame = start_at_frame + limit_frames
+            # update our new total limit
+            total_frames = limit_frames
         else:
             end_at_frame = total_frames
         
@@ -388,6 +390,8 @@ class NormalizedAmplitudeToNumber:
     FUNCTION = "convert"
 
     def convert(self, normalized_amp,):
+        normalized_amp[np.isnan(normalized_amp)] = 0.0
+        normalized_amp[np.isinf(normalized_amp)] = 1.0
         return (normalized_amp, normalized_amp.astype(int))
 
 
