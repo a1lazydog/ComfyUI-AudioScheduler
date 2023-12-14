@@ -515,9 +515,9 @@ class AmplitudeToNumber:
     def convert(self, amplitude,):
         return (amplitude.astype(float), amplitude.astype(int))
 
-class AmplitudeToFloat:
+class NormalizedAmplitudeToNumber:
     @classmethod
-    def INPUT_TYPES(s):
+    def INPUT_TYPES(cls):
         return {
             "required": {
                 "normalized_amp": ("NORMALIZED_AMPLITUDE",),
@@ -529,7 +529,7 @@ class AmplitudeToFloat:
 
     CATEGORY = "AudioScheduler/Amplitude"
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = ("FLOAT", "INT")
     FUNCTION = "convert"
 
     def convert(self, normalized_amp, add_to, threshold_for_add, add_ceiling):
@@ -541,8 +541,8 @@ class AmplitudeToFloat:
 
         # Clip the result to the add_ceiling
         modified_values = np.clip(modified_values, 0.0, add_ceiling)
-        
-        return modified_values
+
+        return modified_values, modified_values.astype(int)
 
 class AmplitudeToGraph:
     @classmethod
@@ -640,7 +640,6 @@ class FloatArrayToGraph:
         image = Image.open(buffer)
 
         return (pil2tensor(image),)
-    
 
 NODE_CLASS_MAPPINGS = {
     "LoadAudio": LoadAudio,
@@ -652,7 +651,6 @@ NODE_CLASS_MAPPINGS = {
     "TransientAmplitudeBasic": TransientAmplitudeBasic,
     "AmplitudeToNumber" : AmplitudeToNumber,
     "AmplitudeToGraph" : AmplitudeToGraph,
-    "AmplitudeToFloat" : AmplitudeToFloat,
     "FloatArrayToGraph" : FloatArrayToGraph,
     # Normalized Amplitude
     "NormalizeAmplitude": NormalizeAmplitude,
@@ -671,7 +669,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "TransientAmplitudeBasic": "Transient Amplitude Basic",
     "AmplitudeToNumber" : "Amplitude To Float or Int",
     "AmplitudeToGraph" : "Amplitude To Graph",
-    "AmplitudeToFloat" : "Amplitude To Float",
     "FloatArrayToGraph" : "Float Array To Graph",
     # Normalized Amplitude
     "NormalizeAmplitude": "Normalize Amplitude",
