@@ -1,0 +1,847 @@
+{
+  "last_node_id": 53,
+  "last_link_id": 70,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "LoadAudio",
+      "pos": [
+        -270,
+        790
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            10
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "everything_3.wav",
+        "Audio"
+      ]
+    },
+    {
+      "id": 50,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        1120,
+        1070
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            66
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 51,
+      "type": "NormalizedAmplitudeToNumber",
+      "pos": [
+        1470,
+        1080
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            67
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToNumber"
+      },
+      "widgets_values": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 53,
+      "type": "PreviewImage",
+      "pos": [
+        1800,
+        1180
+      ],
+      "size": {
+        "0": 317.6799011230469,
+        "1": 246
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 68
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 52,
+      "type": "FloatArrayToGraph",
+      "pos": [
+        1800,
+        1090
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "float_array",
+          "type": "FLOAT",
+          "link": 67,
+          "widget": {
+            "name": "float_array"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            68
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FloatArrayToGraph"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 31,
+      "type": "FloatArrayToGraph",
+      "pos": [
+        1550,
+        270
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "float_array",
+          "type": "FLOAT",
+          "link": 56,
+          "widget": {
+            "name": "float_array"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            53
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FloatArrayToGraph"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PreviewImage",
+      "pos": [
+        1550,
+        360
+      ],
+      "size": {
+        "0": 314.0111389160156,
+        "1": 246
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 53
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 46,
+      "type": "FloatArrayToGraph",
+      "pos": [
+        1550,
+        640
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "float_array",
+          "type": "FLOAT",
+          "link": 60,
+          "widget": {
+            "name": "float_array"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FloatArrayToGraph"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 47,
+      "type": "PreviewImage",
+      "pos": [
+        1550,
+        730
+      ],
+      "size": {
+        "0": 315.7936706542969,
+        "1": 246
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 61
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 45,
+      "type": "FloatArrayToGraph",
+      "pos": [
+        1550,
+        -100
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "float_array",
+          "type": "FLOAT",
+          "link": 62,
+          "widget": {
+            "name": "float_array"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "graph_image",
+          "type": "IMAGE",
+          "links": [
+            63
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FloatArrayToGraph"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 12,
+      "type": "BatchAmplitudeSchedule",
+      "pos": [
+        410,
+        780
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_fft",
+          "type": "AUDIO_FFT",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            14,
+            64
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchAmplitudeSchedule"
+      },
+      "widgets_values": [
+        "max",
+        350,
+        1200
+      ]
+    },
+    {
+      "id": 11,
+      "type": "AudioToFFTs",
+      "pos": [
+        70,
+        790
+      ],
+      "size": {
+        "0": 315,
+        "1": 150
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO_FFT",
+          "type": "AUDIO_FFT",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "total_frames",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AudioToFFTs"
+      },
+      "widgets_values": [
+        0,
+        12,
+        0,
+        80
+      ]
+    },
+    {
+      "id": 16,
+      "type": "NormalizeAmplitude",
+      "pos": [
+        810,
+        460
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "links": [
+            54,
+            58,
+            59
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizeAmplitude"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 43,
+      "type": "NormalizedAmplitudeToNumber",
+      "pos": [
+        1230,
+        -100
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToNumber"
+      },
+      "widgets_values": [
+        0.1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 49,
+      "type": "ClipAmplitude",
+      "pos": [
+        770,
+        1070
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amplitude",
+          "type": "AMPLITUDE",
+          "links": [
+            70
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ClipAmplitude"
+      },
+      "widgets_values": [
+        560,
+        500
+      ]
+    },
+    {
+      "id": 44,
+      "type": "NormalizedAmplitudeToNumber",
+      "pos": [
+        1230,
+        640
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToNumber"
+      },
+      "widgets_values": [
+        0.75,
+        0.25,
+        2
+      ]
+    },
+    {
+      "id": 48,
+      "type": "PreviewImage",
+      "pos": [
+        1549,
+        -10
+      ],
+      "size": {
+        "0": 317.6799011230469,
+        "1": 246
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 63
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 41,
+      "type": "NormalizedAmplitudeToNumber",
+      "pos": [
+        1230,
+        270
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "normalized_amp",
+          "type": "NORMALIZED_AMPLITUDE",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            56
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NormalizedAmplitudeToNumber"
+      },
+      "widgets_values": [
+        0.35000000000000003,
+        0,
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      10,
+      10,
+      0,
+      11,
+      0,
+      "AUDIO"
+    ],
+    [
+      11,
+      11,
+      0,
+      12,
+      0,
+      "AUDIO_FFT"
+    ],
+    [
+      14,
+      12,
+      0,
+      16,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      53,
+      31,
+      0,
+      40,
+      0,
+      "IMAGE"
+    ],
+    [
+      54,
+      16,
+      0,
+      41,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      56,
+      41,
+      0,
+      31,
+      0,
+      "FLOAT"
+    ],
+    [
+      58,
+      16,
+      0,
+      44,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      59,
+      16,
+      0,
+      43,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      60,
+      44,
+      0,
+      46,
+      0,
+      "FLOAT"
+    ],
+    [
+      61,
+      46,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      62,
+      43,
+      0,
+      45,
+      0,
+      "FLOAT"
+    ],
+    [
+      63,
+      45,
+      0,
+      48,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      12,
+      0,
+      49,
+      0,
+      "AMPLITUDE"
+    ],
+    [
+      66,
+      50,
+      0,
+      51,
+      0,
+      "NORMALIZED_AMPLITUDE"
+    ],
+    [
+      67,
+      51,
+      0,
+      52,
+      0,
+      "FLOAT"
+    ],
+    [
+      68,
+      52,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      70,
+      49,
+      0,
+      50,
+      0,
+      "AMPLITUDE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
