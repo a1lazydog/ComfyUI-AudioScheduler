@@ -73,7 +73,24 @@ class LoadAudio:
             return "Invalid audio file: {}".format(audio)
 
         return True
-     
+
+class LoadVHSAudio:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": { "audio": ("VHS_AUDIO",), },}
+
+    CATEGORY = "AudioScheduler"
+
+    RETURN_TYPES = ("AUDIO",)
+    RETURN_NAMES = ("AUDIO",)
+    FUNCTION = "load_audio_stream"
+
+
+    def load_audio_stream(self, audio):
+        file = BytesIO(audio())
+        audio_file = AudioSegment.from_file(file, format="wav")
+        audio_data = AudioData(audio_file)
+        return (audio_data,)
 
 class AudioToFFTs:
     @classmethod
@@ -643,6 +660,7 @@ class FloatArrayToGraph:
 
 NODE_CLASS_MAPPINGS = {
     "LoadAudio": LoadAudio,
+    "LoadVHSAudio": LoadVHSAudio,
     "AudioToFFTs": AudioToFFTs,
     "AudioToAmplitudeGraph": AudioToAmplitudeGraph,
     # Amplitude
@@ -661,6 +679,7 @@ NODE_CLASS_MAPPINGS = {
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "LoadAudio": "Load Audio",
+    "LoadVHSAudio": "Load VHS Audio",
     "AudioToFFTs": "Audio to FFTs",
     "AudioToAmplitudeGraph": "Audio to Amplitude Graph",
     # Amplitude
