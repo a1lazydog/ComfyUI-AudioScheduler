@@ -73,7 +73,24 @@ class LoadAudio:
             return "Invalid audio file: {}".format(audio)
 
         return True
-     
+
+class LoadVHSAudio:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": { "audio": ("VHS_AUDIO",), },}
+
+    CATEGORY = "AudioScheduler"
+
+    RETURN_TYPES = ("AUDIO",)
+    RETURN_NAMES = ("AUDIO",)
+    FUNCTION = "load_audio_stream"
+
+
+    def load_audio_stream(self, audio):
+        file = BytesIO(audio())
+        audio_file = AudioSegment.from_file(file, format="wav")
+        audio_data = AudioData(audio_file)
+        return (audio_data,)
 
 class AudioToFFTs:
     @classmethod
@@ -136,7 +153,7 @@ class AudioToFFTs:
             
             ffts.append(AudioFFTData(frame, audio.sample_rate))
 
-        return (ffts,total_frames,)
+        return (ffts,end_at_frame - start_at_frame,)
     
 
 class AudioToAmplitudeGraph:
@@ -379,20 +396,32 @@ class GateNormalizedAmplitude:
 
 class NormalizedAmplitudeToNumber:
     @classmethod
-    def INPUT_TYPES(s):
-        return {"required": {
-                    "normalized_amp": ("NORMALIZED_AMPLITUDE",),
-                     },}
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "normalized_amp": ("NORMALIZED_AMPLITUDE",),
+                "add_to": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 4.0, "step": 0.05}),
+                "threshold_for_add": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.01}),
+                "add_ceiling": ("FLOAT", {"default": 1.0, "min": 0.1, "max": 4.0, "step": 0.1}),
+            },
+        }
 
     CATEGORY = "AudioScheduler/Amplitude"
 
     RETURN_TYPES = ("FLOAT", "INT")
     FUNCTION = "convert"
 
-    def convert(self, normalized_amp,):
+    def convert(self, normalized_amp, add_to, threshold_for_add, add_ceiling):
         normalized_amp[np.isnan(normalized_amp)] = 0.0
         normalized_amp[np.isinf(normalized_amp)] = 1.0
-        return (normalized_amp, normalized_amp.astype(int))
+
+        # Conditionally add add_to only if value is above threshold_for_add
+        modified_values = np.where(normalized_amp > threshold_for_add, normalized_amp + add_to, normalized_amp)
+
+        # Clip the result to the add_ceiling
+        modified_values = np.clip(modified_values, 0.0, add_ceiling)
+
+        return modified_values, modified_values.astype(int)
 
 
 class NormalizedAmplitudeToGraph:
@@ -515,7 +544,6 @@ class AmplitudeToNumber:
     def convert(self, amplitude,):
         return (amplitude.astype(float), amplitude.astype(int))
 
-
 class AmplitudeToGraph:
     @classmethod
     def INPUT_TYPES(s):
@@ -559,10 +587,63 @@ class AmplitudeToGraph:
         image = Image.open(buffer)
 
         return (pil2tensor(image),)
-    
+
+class FloatArrayToGraph:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "float_array": ("FLOAT", {"array": True}),
+            },
+        }
+
+    CATEGORY = "AudioScheduler/Amplitude"
+
+    RETURN_TYPES = ("IMAGE",)
+    RETURN_NAMES = ("graph_image",)
+    FUNCTION = "graph"
+
+    def graph(self, float_array=None):
+        # If float_array is not provided, you can handle it as needed
+        if float_array is None:
+            raise ValueError("Float array must be provided.")
+
+        # Convert a single float into a one-element array
+        if not isinstance(float_array, np.ndarray):
+            float_array = np.array([float_array])
+
+        width = int(len(float_array) / 10)
+        if width < 10:
+            width = 10
+        if width > 100:
+            width = 100
+        
+        plt.figure(figsize=(width, 6))
+        plt.plot(float_array,)
+
+        # Prevent scientific notation on the y-axis
+        plt.ticklabel_format(axis='y', style='plain')
+
+        plt.xlabel("Frame(s)")
+        plt.ylabel("Amplitude")
+        plt.legend()
+        plt.grid()
+
+        # Create an in-memory buffer to store the image
+        buffer = BytesIO()
+
+        # Save the plot to the in-memory buffer as a PNG
+        plt.savefig(buffer, format="png")
+        buffer.seek(0)
+
+        # Create a Pillow Image object
+        image = Image.open(buffer)
+
+        return (pil2tensor(image),)
 
 NODE_CLASS_MAPPINGS = {
     "LoadAudio": LoadAudio,
+    "LoadVHSAudio": LoadVHSAudio,
     "AudioToFFTs": AudioToFFTs,
     "AudioToAmplitudeGraph": AudioToAmplitudeGraph,
     # Amplitude
@@ -571,6 +652,7 @@ NODE_CLASS_MAPPINGS = {
     "TransientAmplitudeBasic": TransientAmplitudeBasic,
     "AmplitudeToNumber" : AmplitudeToNumber,
     "AmplitudeToGraph" : AmplitudeToGraph,
+    "FloatArrayToGraph" : FloatArrayToGraph,
     # Normalized Amplitude
     "NormalizeAmplitude": NormalizeAmplitude,
     "GateNormalizedAmplitude": GateNormalizedAmplitude,
@@ -580,6 +662,7 @@ NODE_CLASS_MAPPINGS = {
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "LoadAudio": "Load Audio",
+    "LoadVHSAudio": "Load VHS Audio",
     "AudioToFFTs": "Audio to FFTs",
     "AudioToAmplitudeGraph": "Audio to Amplitude Graph",
     # Amplitude
@@ -588,6 +671,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "TransientAmplitudeBasic": "Transient Amplitude Basic",
     "AmplitudeToNumber" : "Amplitude To Float or Int",
     "AmplitudeToGraph" : "Amplitude To Graph",
+    "FloatArrayToGraph" : "Float Array To Graph",
     # Normalized Amplitude
     "NormalizeAmplitude": "Normalize Amplitude",
     "GateNormalizedAmplitude": "Gate Normalized Amplitude",
