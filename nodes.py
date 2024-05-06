@@ -126,7 +126,7 @@ class AudioToFFTs:
             
             ffts.append(AudioFFTData(frame, audio.sample_rate))
 
-        return (ffts,total_frames,)
+        return (ffts,end_at_frame - start_at_frame,)
     
 
 class AudioToAmplitudeGraph:
