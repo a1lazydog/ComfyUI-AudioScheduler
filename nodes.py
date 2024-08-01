@@ -1,7 +1,6 @@
 import os
 from io import BytesIO
 import hashlib
-import folder_paths
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -24,79 +23,44 @@ One prompt per line
 def pil2tensor(image):
     return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
 
-class LoadAudio:
+class AudioToAudioData:
     @classmethod
     def INPUT_TYPES(s):
-        audio_extensions = ['mp3','wav']
-        input_dir = folder_paths.get_input_directory()
-        files = []
-        for f in os.listdir(input_dir):
-            if os.path.isfile(os.path.join(input_dir, f)):
-                file_parts = f.split('.')
-                if len(file_parts) > 1 and (file_parts[-1] in audio_extensions):
-                    files.append(f)
-        return {"required": {
-                    "audio": (sorted(files),),
-                     },}
+        return {"required": { "audio": ("AUDIO",), },}
 
     CATEGORY = "AudioScheduler"
 
-    RETURN_TYPES = ("AUDIO",)
-    RETURN_NAMES = ("AUDIO",)
+    RETURN_TYPES = ("AUDIO_DATA",)
+    RETURN_NAMES = ("AUDIO_DATA",)
     FUNCTION = "load_audio"
 
 
     def load_audio(self, audio):
-        file = folder_paths.get_annotated_filepath(audio)
+        waveform = audio["waveform"]
+        sample_rate = audio["sample_rate"]
 
-        # TODO: support more formats
-        if (file.lower().endswith('.mp3')):
-            audio_file = AudioSegment.from_mp3(file)
-        else:
-            audio_file = AudioSegment.from_file(file, format="wav")
+        # Convert waveform tensor to NumPy array
+        waveform_np = waveform.squeeze().numpy()
         
-        audio_data = AudioData(audio_file)
+        # Convert NumPy array to raw audio data
+        # pydub expects 16-bit PCM audio, so we need to convert the NumPy array appropriately
+        waveform_int16 = (waveform_np * 32767).astype(np.int16)
 
-        return (audio_data,)
-    
-    @classmethod
-    def IS_CHANGED(self, audio, **kwargs):
-        audio_path = folder_paths.get_annotated_filepath(audio)
-        m = hashlib.sha256()
-        with open(audio_path, 'rb') as f:
-            m.update(f.read())
-        return m.digest().hex()
-
-    @classmethod
-    def VALIDATE_INPUTS(self, audio, **kwargs):
-        if not folder_paths.exists_annotated_filepath(audio):
-            return "Invalid audio file: {}".format(audio)
-
-        return True
-
-class LoadVHSAudio:
-    @classmethod
-    def INPUT_TYPES(s):
-        return {"required": { "audio": ("VHS_AUDIO",), },}
-
-    CATEGORY = "AudioScheduler"
-
-    RETURN_TYPES = ("AUDIO",)
-    RETURN_NAMES = ("AUDIO",)
-    FUNCTION = "load_audio_stream"
-
-
-    def load_audio_stream(self, audio):
-        file = BytesIO(audio())
-        audio_file = AudioSegment.from_file(file, format="wav")
-        audio_data = AudioData(audio_file)
+         # Create AudioSegment from raw audio data
+        audio_segment = AudioSegment(
+            waveform_int16.tobytes(), 
+            frame_rate=sample_rate, 
+            sample_width=waveform_int16.dtype.itemsize, 
+            channels=1
+        )
+        audio_data = AudioData(audio_segment)
         return (audio_data,)
 
 class AudioToFFTs:
     @classmethod
     def INPUT_TYPES(s):
         return {"required": {
-                    "audio": ("AUDIO",),
+                    "audio": ("AUDIO_DATA",),
                     "channel": ("INT", {"default": 0, "min": 0, "max": 24, "step": 1}),
                     "frames_per_second": ("INT", {"default": 12, "min": 0, "max": 240, "step": 1}),
                     },                            
@@ -160,7 +124,7 @@ class AudioToAmplitudeGraph:
     @classmethod
     def INPUT_TYPES(s):
         return {"required": {
-                    "audio": ("AUDIO",),
+                    "audio": ("AUDIO_DATA",),
                     "channel": ("INT", {"default": 0, "min": 0, "max": 24, "step": 1}),
                     "lower_band_range": ("INT", {"default": 500.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
                     "upper_band_range": ("INT", {"default": 4000.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
@@ -642,8 +606,7 @@ class FloatArrayToGraph:
         return (pil2tensor(image),)
 
 NODE_CLASS_MAPPINGS = {
-    "LoadAudio": LoadAudio,
-    "LoadVHSAudio": LoadVHSAudio,
+    "AudioToAudioData": AudioToAudioData,
     "AudioToFFTs": AudioToFFTs,
     "AudioToAmplitudeGraph": AudioToAmplitudeGraph,
     # Amplitude
@@ -661,10 +624,9 @@ NODE_CLASS_MAPPINGS = {
     "NormalizedAmplitudeDrivenString" : NormalizedAmplitudeDrivenString
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoadAudio": "Load Audio",
-    "LoadVHSAudio": "Load VHS Audio",
-    "AudioToFFTs": "Audio to FFTs",
-    "AudioToAmplitudeGraph": "Audio to Amplitude Graph",
+    "AudioToAudioData": "Audio to AudioData",
+    "AudioToFFTs": "AudioData to FFTs",
+    "AudioToAmplitudeGraph": "AudioData to Amplitude Graph",
     # Amplitude
     "BatchAmplitudeSchedule": "Batch Amplitude Schedule",
     "ClipAmplitude": "Clip Amplitude",
