@@ -1,7 +1,6 @@
 import os
 from io import BytesIO
 import hashlib
-import folder_paths
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -57,29 +56,11 @@ class AudioToAudioData:
         audio_data = AudioData(audio_segment)
         return (audio_data,)
 
-class LoadVHSAudio:
-    @classmethod
-    def INPUT_TYPES(s):
-        return {"required": { "audio": ("VHS_AUDIO",), },}
-
-    CATEGORY = "AudioScheduler"
-
-    RETURN_TYPES = ("AUDIO_DATA",)
-    RETURN_NAMES = ("AUDIO_DATA",)
-    FUNCTION = "load_audio_stream"
-
-
-    def load_audio_stream(self, audio):
-        file = BytesIO(audio())
-        audio_file = AudioSegment.from_file(file, format="wav")
-        audio_data = AudioData(audio_file)
-        return (audio_data,)
-
 class AudioToFFTs:
     @classmethod
     def INPUT_TYPES(s):
         return {"required": {
-                    "audio_data": ("AUDIO_DATA",),
+                    "audio": ("AUDIO_DATA",),
                     "channel": ("INT", {"default": 0, "min": 0, "max": 24, "step": 1}),
                     "frames_per_second": ("INT", {"default": 12, "min": 0, "max": 240, "step": 1}),
                     },                            
@@ -143,7 +124,7 @@ class AudioToAmplitudeGraph:
     @classmethod
     def INPUT_TYPES(s):
         return {"required": {
-                    "audio_data": ("AUDIO_DATA",),
+                    "audio": ("AUDIO_DATA",),
                     "channel": ("INT", {"default": 0, "min": 0, "max": 24, "step": 1}),
                     "lower_band_range": ("INT", {"default": 500.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
                     "upper_band_range": ("INT", {"default": 4000.0, "min": 0.0, "max": 100000.0, "step": 1.0}),
@@ -625,7 +606,6 @@ class FloatArrayToGraph:
         return (pil2tensor(image),)
 
 NODE_CLASS_MAPPINGS = {
-    "LoadVHSAudio": LoadVHSAudio,
     "AudioToAudioData": AudioToAudioData,
     "AudioToFFTs": AudioToFFTs,
     "AudioToAmplitudeGraph": AudioToAmplitudeGraph,
@@ -644,10 +624,9 @@ NODE_CLASS_MAPPINGS = {
     "NormalizedAmplitudeDrivenString" : NormalizedAmplitudeDrivenString
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoadVHSAudio": "Load VHS Audio",
     "AudioToAudioData": "Audio to AudioData",
-    "AudioToFFTs": "Audio to FFTs",
-    "AudioToAmplitudeGraph": "Audio to Amplitude Graph",
+    "AudioToFFTs": "AudioData to FFTs",
+    "AudioToAmplitudeGraph": "AudioData to Amplitude Graph",
     # Amplitude
     "BatchAmplitudeSchedule": "Batch Amplitude Schedule",
     "ClipAmplitude": "Clip Amplitude",
