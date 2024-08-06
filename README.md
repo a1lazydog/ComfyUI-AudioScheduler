@@ -13,15 +13,15 @@ Install using the ComfyUI Manager.  Look for ComfyUI-AudioScheduler.
 
 # Nodes
 
-## LoadAudio
+## AudioToAudioData
 
 **Input Types:**
 
-- `audio`: A list of audio file names to be loaded. Supported formats: mp3, wav.
+- `audio`: Audio file from the LoadAudio node.  Both regular ComfyUI and VHS node is supported.
 
 **Output Types:**
 
-- `AUDIO`: Loaded audio data.
+- `AUDIO_DATA`: Loaded audio data.
 
 **Description:**
 
@@ -264,18 +264,30 @@ Feel free to explore and use these nodes for your audio processing tasks. Detail
 
 Takes an audio file, finds the amplitude within a frequency range, normalizes it and sends it off.
 
-![Basic Example](./examples/basic_example.png)
+![Basic Workflow](./examples/basic_example.png)
 
 Result:
 
-![Basic Example Output](./examples/basic_example.gif)
+![Basic Output](./examples/basic_example.gif)
 
 ## Using multiple frequency ranges
 
 We can use the amplitude to power one set of conditions. And the inverse to power another set.
 
-![Two Amplitude Example](./examples/two_amplitude_example.png)
+![Two Amplitude Workflow](./examples/two_amplitude_example.png)
 
 You can use different frequencies bands to power different conditions both in the positive and negative prompts.
 
-![Full Example](./examples/full_example.png)
+Result:
+
+![Two Amplitude Output](./examples/two_amplitude_example.gif)
+
+## Using a driven string
+
+You can use the Normalized Amplitude Driven String to more actively switch up the prompts
+
+![Text Switching Workflow](./examples/text_switching_example.png)
+
+Result:
+
+![Text Switching Output](./examples/text_switching_example.gif)
