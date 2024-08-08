@@ -85,7 +85,7 @@ class AudioToFFTs:
         # Number of samples in the audio data
         total_samples = len(audio_data)
         
-        samples_per_frame = int(np.ceil(audio.sample_rate / frames_per_second))
+        samples_per_frame = audio.sample_rate / frames_per_second
         
         # Calculate the number of frames
         total_frames = int(np.ceil(total_samples / samples_per_frame))
@@ -112,8 +112,10 @@ class AudioToFFTs:
             if i_next >= total_samples:
                 i_next = total_samples
 
+            i_current = i * samples_per_frame
+
             # Extract the current frame of audio data
-            frame = audio_data[i * samples_per_frame : i_next]
+            frame = audio_data[round(i_current) : round(i_next)]
             
             ffts.append(AudioFFTData(frame, audio.sample_rate))
 
