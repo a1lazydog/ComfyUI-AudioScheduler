@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-audioscheduler"
+description = "Load mp3 files and use the audio nodes to power animations and prompt scheduling. Use with FizzNodes."
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["matplotlib", "numpy", "pandas", "pydub", "scipy"]
+
+[project.urls]
+Repository = "https://github.com/a1lazydog/ComfyUI-AudioScheduler"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-AudioScheduler"
+Icon = ""
