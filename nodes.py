@@ -41,7 +41,14 @@ class AudioToAudioData:
 
         # Convert waveform tensor to NumPy array
         waveform_np = waveform.squeeze().numpy()
-        
+
+        # Detect the number of audio channels
+        if waveform_np.ndim == 2:
+            channels = waveform_np.shape[0]
+            waveform_np = waveform_np.T.flatten()
+        else:
+            channels = 1
+
         # Convert NumPy array to raw audio data
         # pydub expects 16-bit PCM audio, so we need to convert the NumPy array appropriately
         waveform_int16 = (waveform_np * 32767).astype(np.int16)
@@ -51,7 +58,7 @@ class AudioToAudioData:
             waveform_int16.tobytes(), 
             frame_rate=sample_rate, 
             sample_width=waveform_int16.dtype.itemsize, 
-            channels=1
+            channels=channels
         )
         audio_data = AudioData(audio_segment)
         return (audio_data,)
